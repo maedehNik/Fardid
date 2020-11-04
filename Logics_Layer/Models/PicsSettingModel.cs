@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Logics_Layer.Models
 {
-    class PicsSettingModel
+    public class PicsSettingModel
     {
         public int MainLogo_Id { get; set; }
         public string MainLogo_Path { get; set; }

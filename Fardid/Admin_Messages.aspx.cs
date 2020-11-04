@@ -19,7 +19,7 @@ namespace Fardid
             messageModels = Logic.GetMessages();
 
             DataList1.DataSource = messageModels;
-
+            DataList1.DataBind();
         }
     }
 }

@@ -129,7 +129,7 @@
                     </div>
                     <div class="tab-content">
                         <div class="tab-pane active" id="m_user_profile_tab_1">
-                            <form class="m-form m-form--fit m-form--label-align-right" onsubmit="return false;">
+                            <div class="m-form m-form--fit m-form--label-align-right" onsubmit="return false;">
                                 <div class="m-portlet__body" style="padding-bottom: 0">
                                     <div class="col-12">
                                         <div class="container-fluid">
@@ -153,7 +153,7 @@
                                                                 <td><%# Eval("Name") %></td>
                                                                 <td><%# Eval("Date") %></td>
                                                                 <td>
-                                                                    <%
+                                                                   <%-- <%
                                                                         if ((int)Eval("Seen") == 1)
                                                                         {
                                                                             if ((int)Eval("Answered") == 1)
@@ -168,7 +168,7 @@
                                                                     else
                                                                     { %>
                                                                     <button class="btn btn-danger tshpcustom">دیده نشده</button>
-                                                                    <%} %>
+                                                                    <%} %>--%>
                                                                 </td>
                                                                 <td>
                                                                     <button class="btn btn-brand tshpcustom view-message-btn" data-toggle="modal" data-target="#view-message" data-name="<%# Eval("Name") %>" data-subject="<%# Eval("Name") %>" data-email="<%# Eval("Email") %>" data-message="<%# Eval("Message") %>"><i class="fa fa-eye tshfa"></i>نمایش</button>
@@ -234,7 +234,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>

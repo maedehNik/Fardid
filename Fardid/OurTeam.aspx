@@ -91,12 +91,14 @@
             <h5 class="sub-title">
                 Get the best news and stories delivered to your inbox
             </h5>
-            <form action="" method="post" id="nl-form" autocomplete="off">
+            <div id="nlForm" autocomplete="off">
                 <div class="nl-div col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <input type="text" id="email-nl-form" name="email" class="col-lg-4 col-lg-push-3 col-sm-7 col-sm-push-1 col-xs-8" placeholder="Enter Your Email">
-                    <input type="submit" id="submit-nl-form" class="col-lg-2 col-lg-push-3 col-sm-3 col-sm-push-1 col-xs-4" value="Subscribe">
+                   <%-- <input type="text" id="email-nl-form" name="email" class="col-lg-4 col-lg-push-3 col-sm-7 col-sm-push-1 col-xs-8" placeholder="Enter Your Email">--%>
+                    <asp:TextBox ID="TextBox1" runat="server" CssClass="col-lg-4 col-lg-push-3 col-sm-7 col-sm-push-1 col-xs-8" PlaceHolder="Enter Your Email"></asp:TextBox>
+                    <%--<input type="submit" id="submit-nl-form" class="col-lg-2 col-lg-push-3 col-sm-3 col-sm-push-1 col-xs-4" value="Subscribe">--%>
+                    <asp:Button ID="Button1" runat="server" Text="Subscribe" CssClass="col-lg-2 col-lg-push-3 col-sm-3 col-sm-push-1 col-xs-4" OnClick="Button1_Click"/>
                 </div>
-            </form>
+            </div>
         </div>
     </section>
 </div>
