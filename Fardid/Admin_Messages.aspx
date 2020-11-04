@@ -17,25 +17,31 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label for="view-message-modal-name" class="form-control-label">نام و نام خانوادگی</label>
-                            <input type="text" class="form-control" id="view-message-modal-name" disabled="disabled">
+                            <%--<input type="text" class="form-control" id="view-message-modal-name" disabled="disabled">--%>
+                            <asp:TextBox ID="TextBoxModalName" runat="server" CssClass="form-control" Disabled="disabled"></asp:TextBox>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="view-message-modal-subject" class="form-control-label">موضوع</label>
-                            <input type="text" class="form-control" id="view-message-modal-subject" disabled="disabled">
+                            <%--<input type="text" class="form-control" id="view-message-modal-subject" disabled="disabled">--%>
+                            <asp:TextBox ID="TextBoxModelSub" runat="server" CssClass="form-control" Disabled="disabled"></asp:TextBox>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="view-message-modal-email" class="form-control-label">ایمیل</label>
-                        <input type="text" class="form-control" id="view-message-modal-email" disabled="disabled">
+                        <%--<input type="text" class="form-control" id="view-message-modal-email" disabled="disabled">--%>
+                        <asp:TextBox ID="TextBoxModalMail" runat="server" CssClass="form-control" Disabled="disabled"></asp:TextBox>
                     </div>
                     <div class="form-group">
                         <label for="view-message-modal-message" class="form-control-label">پیام</label>
-                        <textarea class="form-control textarea-padding resize-none" id="view-message-modal-message" disabled="disabled" style="height: 150px;"></textarea>
+                        <%--<textarea class="form-control textarea-padding resize-none" id="view-message-modal-message" disabled="disabled" style="height: 150px;"></textarea>--%>
+                        <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control textarea-padding resize-none" Disabled="disabled" Height="150 px" TextMode="MultiLine"></asp:TextBox>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">بستن</button>
-                    <button type="button" class="btn btn-primary send-message-btn-view-modal" data-dismiss="modal" data-toggle="modal" data-target="#send-message">پاسخ</button>
+                  <%--  <button type="button" class="btn btn-secondary" data-dismiss="modal">بستن</button>--%>
+                    <asp:Button ID="Button1" runat="server" Text="بستن" data-dismiss="modal" CssClass="btn btn-secondary" OnClick="Button1_Click"/>
+                    <%--<button type="button" class="btn btn-primary send-message-btn-view-modal" data-dismiss="modal" data-toggle="modal" data-target="#send-message">پاسخ</button>--%>
+                    <asp:Button ID="Button2" runat="server" Text="پاسخ" CssClass="btn btn-primary send-message-btn-view-modal" data-dismiss="modal" data-toggle="modal" data-target="#send-message" OnClick="Button2_Click"/>
                 </div>
             </div>
         </div>
@@ -145,18 +151,19 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <asp:DataList ID="DataList1" runat="server">
-                                                        <ItemTemplate>
-                                                            <tr>
-                                                                <th scope="row"><%# Eval("Num") %></th>
-                                                                <td><%# Eval("Name") %></td>
-                                                                <td><%# Eval("Name") %></td>
-                                                                <td><%# Eval("Date") %></td>
+                                                    
+                                                    <%foreach (var item in messageModels)
+                                                        {%>
+                                                    <tr>
+                                                                <th scope="row"><% = item.Num %></th>
+                                                                <td><% = item.Name%></td>
+                                                                <td><% = item.Subject %></td>
+                                                                <td><%= item.Date %></td>
                                                                 <td>
-                                                                   <%-- <%
-                                                                        if ((int)Eval("Seen") == 1)
+                                                                    <%
+                                                                        if (item.Seen == 1)
                                                                         {
-                                                                            if ((int)Eval("Answered") == 1)
+                                                                            if (item.Answered == 1)
                                                                             { %>
                                                                     <button class="btn btn-success tshpcustom">پاسخ داده شده</button>
                                                                     <% }
@@ -168,17 +175,21 @@
                                                                     else
                                                                     { %>
                                                                     <button class="btn btn-danger tshpcustom">دیده نشده</button>
-                                                                    <%} %>--%>
+                                                                    <%} %>
                                                                 </td>
                                                                 <td>
-                                                                    <button class="btn btn-brand tshpcustom view-message-btn" data-toggle="modal" data-target="#view-message" data-name="<%# Eval("Name") %>" data-subject="<%# Eval("Name") %>" data-email="<%# Eval("Email") %>" data-message="<%# Eval("Message") %>"><i class="fa fa-eye tshfa"></i>نمایش</button>
+                                                                   <%-- <button runat="server" Id="Btn_<%= item.M_Id %>" onserverclick="Unnamed_ServerClick" class="btn btn-brand tshpcustom view-message-btn" data-toggle="modal" data-target="#view-message" CommandArgument="<%= item.M_Id %>" CommandName="<%= item.Num %>"><i class="fa fa-eye tshfa"></i>نمایش</button>--%>
+
+                                                                    <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-brand tshpcustom view-message-btn"  OnClick="Unnamed_ServerClick"><i class="fa fa-eye tshfa"></i>نمایش</asp:LinkButton>
+
                                                                 </td>
                                                             </tr>
-                                                        </ItemTemplate>
-                                                    </asp:DataList>
+                                                       <% } %>
+                                                            
+                                                    
                                                 </tbody>
                                             </table>
-                                            <table style="display: none;" class="cust-table cust-table-2 table table-striped table-hover m-table m-table--head-separator-primary">
+                                            <%--<table style="display: none;" class="cust-table cust-table-2 table table-striped table-hover m-table m-table--head-separator-primary">
                                                 <tr>
                                                     <th>#</th>
                                                     <td>1</td>
@@ -209,9 +220,9 @@
                                                         <button class="btn btn-brand tshpcustom view-message-btn" data-toggle="modal" data-target="#view-message" data-name="امیرحسین عرب" data-subject="ساخت تیزر" data-email="amir@gmail.com" data-message="پیام پیام پیام"><i class="fa fa-eye tshfa"></i>نمایش</button>
                                                     </td>
                                                 </tr>
-                                            </table>
-                                            <div class="col-lg-12 mt-4 mb-4">
-                                                <span class="col-lg-3">صفحه
+                                            </table>--%>
+                                            <div   class="col-lg-12 mt-4 mb-4">
+                                                <span style="display:none" class="col-lg-3">صفحه
 															<span>50</span>
                                                     از
 															<span>170</span>

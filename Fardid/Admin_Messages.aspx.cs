@@ -12,14 +12,59 @@ namespace Fardid
     public partial class Admin_Messages : System.Web.UI.Page
     {
         private Messages_Logic Logic;
-        private List<MessageModel> messageModels;
+        public List<MessageModel> messageModels;
         protected void Page_Load(object sender, EventArgs e)
         {
             Logic = new Messages_Logic();
             messageModels = Logic.GetMessages();
 
-            DataList1.DataSource = messageModels;
-            DataList1.DataBind();
+            //DataList1.DataSource = messageModels;
+            //DataList1.DataBind();
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Unnamed_ServerClick(object sender, EventArgs e)
+        {
+            MyButton btn =(MyButton)sender;
+
+
+            int Id = Convert.ToInt32(btn.Item_Id);
+            int index = Convert.ToInt32(btn.RowNum) - 1;
+            Logic.SeenMessage(Id);
+            var model = messageModels[index];
+            if (Id == model.M_Id)
+            {
+                TextBoxModalName.Text = model.Name;
+                TextBoxModalMail.Text = model.Email;
+                TextBoxModelSub.Text = model.Subject;
+                TextBox1.Text = model.Message;
+            }
+            else
+            {
+                foreach (var item in messageModels)
+                {
+                    if (item.M_Id == Id)
+                    {
+                        model = item;
+                        TextBoxModalName.Text = model.Name;
+                        TextBoxModalMail.Text = model.Email;
+                        TextBoxModelSub.Text = model.Subject;
+                        TextBox1.Text = model.Message;
+                    }
+
+                }
+            }
+
+            Page.ClientScript.RegisterStartupScript(GetType(), "modelBox", "$('#view-message').modal('show');", true);
         }
     }
 }

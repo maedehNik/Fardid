@@ -2109,6 +2109,12 @@
     <Content Include="AdminAssets\vendors\persianDatepicker.js" />
     <Content Include="Admin_AboutSetting.aspx" />
     <Content Include="Admin_AddService.aspx" />
+    <Content Include="Admin_Ajax\Active_NewsLetter.aspx" />
+    <Content Include="Admin_Ajax\AddTeamMember.aspx" />
+    <Content Include="Admin_Ajax\DeActive_NewsLetter.aspx" />
+    <Content Include="Admin_Ajax\DeleteTeamMember.aspx" />
+    <Content Include="Admin_Ajax\SaveClientsPic.aspx" />
+    <Content Include="Admin_Ajax\SaveSliderPics.aspx" />
     <Content Include="Admin_Index.aspx" />
     <Content Include="Admin_MainSetting.aspx" />
     <Content Include="Admin_MainVideo.aspx" />
@@ -2166,6 +2172,7 @@
     <Content Include="OurTeam.aspx" />
     <Content Include="portfolio.aspx" />
     <Content Include="services.aspx" />
+    <Content Include="SQL\15 Aban\FardidDB.sql" />
     <Content Include="TeatAdmin.aspx" />
     <Content Include="Test.aspx" />
     <Content Include="Web.config" />
@@ -2213,6 +2220,48 @@
     </Compile>
     <Compile Include="Admin_AddService.aspx.designer.cs">
       <DependentUpon>Admin_AddService.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Ajax\Active_NewsLetter.aspx.cs">
+      <DependentUpon>Active_NewsLetter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Ajax\Active_NewsLetter.aspx.designer.cs">
+      <DependentUpon>Active_NewsLetter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Ajax\AddTeamMember.aspx.cs">
+      <DependentUpon>AddTeamMember.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Ajax\AddTeamMember.aspx.designer.cs">
+      <DependentUpon>AddTeamMember.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Ajax\DeActive_NewsLetter.aspx.cs">
+      <DependentUpon>DeActive_NewsLetter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Ajax\DeActive_NewsLetter.aspx.designer.cs">
+      <DependentUpon>DeActive_NewsLetter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Ajax\DeleteTeamMember.aspx.cs">
+      <DependentUpon>DeleteTeamMember.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Ajax\DeleteTeamMember.aspx.designer.cs">
+      <DependentUpon>DeleteTeamMember.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Ajax\SaveClientsPic.aspx.cs">
+      <DependentUpon>SaveClientsPic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Ajax\SaveClientsPic.aspx.designer.cs">
+      <DependentUpon>SaveClientsPic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Ajax\SaveSliderPics.aspx.cs">
+      <DependentUpon>SaveSliderPics.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Ajax\SaveSliderPics.aspx.designer.cs">
+      <DependentUpon>SaveSliderPics.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin_Index.aspx.cs">
       <DependentUpon>Admin_Index.aspx</DependentUpon>
@@ -2331,6 +2380,7 @@
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MyButton.cs" />
     <Compile Include="OurTeam.aspx.cs">
       <DependentUpon>OurTeam.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

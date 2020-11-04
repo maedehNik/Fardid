@@ -24,15 +24,6 @@ namespace Fardid.Admin
         protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder_Css;
 
         /// <summary>
-        /// ContentPlaceHolder_Modal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder_Modal;
-
-        /// <summary>
         /// form2 control.
         /// </summary>
         /// <remarks>
@@ -40,6 +31,15 @@ namespace Fardid.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form2;
+
+        /// <summary>
+        /// ContentPlaceHolder_Modal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder_Modal;
 
         /// <summary>
         /// Image1 control.

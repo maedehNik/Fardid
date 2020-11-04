@@ -7,17 +7,24 @@ using System.Web.UI.WebControls;
 using Logics_Layer.Admin;
 using Logics_Layer.Models;
 
-namespace Fardid
+namespace Fardid.Admin_Ajax
 {
-    public partial class Admin_OurTeam : System.Web.UI.Page
+    public partial class AddAdmin : System.Web.UI.Page
     {
         private OurTeam_Logic logic;
-        public List<OurTeamModel> Models;
         protected void Page_Load(object sender, EventArgs e)
         {
             logic = new OurTeam_Logic();
-            Models = logic.GetTeam();
+            if (Request["_Data"] != null)
+            {
+                var model = new OurTeamModel();
+                
 
+
+
+                int Id = Convert.ToInt32(Request["Id"]);
+                Response.Write(logic.DeleteMember(Id));
+            }
         }
     }
 }

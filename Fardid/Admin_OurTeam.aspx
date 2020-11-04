@@ -9,6 +9,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">حذف از تیم</h5>
+                    <div style="display:none" id="DeleteTeamDiv"></div>
                     <button type="button" class="close" data-dismiss="modal" aria-label="close">
                         <span aria-hidden="true">×</span>
                     </button>
@@ -22,7 +23,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">خیر</button>
-                    <button type="button" class="btn btn-danger">بله</button>
+                    <button type="button" class="btn btn-danger" onclick="return DeleteTeamMember()">بله</button>
                 </div>
             </div>
         </div>
@@ -43,6 +44,7 @@
                         </div>
                         <div class="form-group text-center">
                             <button class="btn btn-brand btn-sm" type="button" data-target="#uploader" data-toggle="modal">انتخاب عکس</button>
+                            <input  id="ChangePic" hidden/>
                         </div>
                         <div class="form-group">
                             <label for="team-edit-name" class="form-control-label">نام و نام خانوادگی</label>
@@ -77,6 +79,7 @@
                         </div>
                         <div class="form-group text-center">
                             <button class="btn btn-brand btn-sm" type="button" data-target="#uploader" data-toggle="modal">انتخاب عکس</button>
+                            <input  id="NewPic" hidden/>
                         </div>
                         <div class="form-group">
                             <label for="team-edit-name" class="form-control-label">نام و نام خانوادگی</label>
@@ -89,7 +92,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">بستن</button>
-                        <button type="submit" class="btn btn-success">افزودن</button>
+                        <button type="submit" class="btn btn-success" onclick="return AddMember()">افزودن</button>
                     </div>
                 </form>
             </div>
@@ -122,22 +125,26 @@
     </div>
     <div class="m-content">
         <div class="row">
+            <%foreach (var item in Models)
+                {%>
             <div class="col-lg-3">
                 <!--begin::Portlet-->
                 <div class="m-portlet">
                     <div class="m-card-profile" style="padding-top: 0;">
                         <div>
                             <div>
-                                <img src="./AdminAssets/app/media/img/users/user4.jpg" alt="" style="width: 100%;">
+                                <img src="<%= item.Pic_Path %>" alt="" style="width: 100%;">
                             </div>
                         </div>
                         <div class="m-card-profile__details">
-                            <span class="m-card-profile__name" style="margin-top: 15px;">MOHAMMAD HOSSEIN MAJIDPOUR
+                            <span class="m-card-profile__name" style="margin-top: 15px;"><%=item.Name %>
                             </span>
                             <div>
-                                <a class="m-card-profile__email m-link tshcurpoi">GRAPHIC DESIGNER</a>
+                                <a class="m-card-profile__email m-link tshcurpoi"><%=item.Job %></a>
                             </div>
                             <div class="m-widget1 row">
+                                <%if (item.deleted == 0)
+                                    {%>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                     <button class="col-12 btn btn-primary edit-team-btn" data-toggle="modal" data-target="#edit-team" data-name="MOHAMMAD HOSSEIN MAJIDPOUR" data-title="GRAPHIC DESIGNER" data-img="./AdminAssets/app/media/img/users/user4.jpg">
                                         <i class="fa fa-edit"></i>
@@ -145,21 +152,86 @@
                                     </button>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                    <button class="col-12 btn btn-danger remove-team-btn" data-toggle="modal" data-target="#delete-team" data-name="MOHAMMAD HOSSEIN MAJIDPOUR" data-title="GRAPHIC DESIGNER">
+                                    <button class="col-12 btn btn-danger remove-team-btn" data-toggle="modal" data-target="#delete-team" onclick="return ModalDelete(<%=item.T_Id %>)">
                                         <i class="fa fa-edit"></i>
                                         حذف
                                     </button>
                                 </div>
+                                <%}
+                                else
+                                { %>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                    <button class="col-12 btn btn-danger remove-team-btn" onclick="return false">
+                                        <i class="fa fa-edit"></i>
+                                        حذف شده
+                                    </button>
+                                </div>
+                                <%} %>
                             </div>
                         </div>
                     </div>
+
                 </div>
                 <!--end::Portlet-->
             </div>
+            <%}
+            %>
         </div>
     </div>
 
 
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder_Scripts" runat="server">
+    <script>
+        function ModalDelete(Id) {
+            $('#DeleteTeamDiv').text(Id);
+            //alert("Done Active" + $('#ActiveDiv').text());
+            return false;
+        }
+
+        function DeleteTeamMember() {
+            Id = $('#DeleteTeamDiv').text();
+            $.ajax({
+                url: 'Admin_Ajax/DeleteTeamMember.aspx?Id=' + Id,
+                type: "post",
+                contentType: "application/json; charset=utf-8",
+                success: function (response) {
+                    if (response == "Success") {
+                        location.reload(true);
+                    }
+
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    alert("مشکل در برقراری ارتباط با سرور");
+                }
+            });
+
+        }
+
+
+        function AddMember() {
+
+            picId = $("#NewPic").val();
+            Name_ = $("#team-add-name").val();
+            Subjecy__ = $("#team-add-title").val();
+
+            $.ajax({
+                url: 'Admin_Ajax/DeleteTeamMember.aspx?Id=' + Id,
+                type: "post",
+                contentType: "application/json; charset=utf-8",
+                success: function (response) {
+                    if (response == "Success") {
+                        location.reload(true);
+                    }
+
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    alert("مشکل در برقراری ارتباط با سرور");
+                }
+            });
+
+        }
+    </script>
+
+
 </asp:Content>

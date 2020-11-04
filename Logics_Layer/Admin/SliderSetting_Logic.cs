@@ -9,7 +9,7 @@ using Logics_Layer.Models;
 
 namespace Logics_Layer.Admin
 {
-    class SliderSetting_Logic : PDBC
+    public class SliderSetting_Logic : PDBC
     {
         public List<PicModel> GetSliders()
         {

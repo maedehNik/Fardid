@@ -47,7 +47,7 @@ namespace Logics_Layer.Admin
             parss.Add(par);
 
             base.Connect();
-            DataTable dt = base.Select("SELECT [EmailAddress] FROM [tbl_Newsletter] WHERE Mail_Id= @M_Id");
+            DataTable dt = base.Select("SELECT [EmailAddress] FROM [tbl_Newsletter] WHERE Mail_Id= @M_Id", parss);
             if (dt.Rows.Count != 0)
             {
                 s += base.Script("UPDATE [tbl_Newsletter] SET [IsActive] = 1 WHERE Mail_Id=@M_Id", parss);
@@ -76,7 +76,7 @@ namespace Logics_Layer.Admin
             parss.Add(par);
 
             base.Connect();
-            DataTable dt = base.Select("SELECT [EmailAddress] FROM [tbl_Newsletter] WHERE Mail_Id= @M_Id");
+            DataTable dt = base.Select("SELECT [EmailAddress] FROM [tbl_Newsletter] WHERE Mail_Id= @M_Id", parss);
             if (dt.Rows.Count != 0)
             {
                 s += base.Script("UPDATE [tbl_Newsletter] SET [IsActive] = 0 WHERE Mail_Id=@M_Id", parss);

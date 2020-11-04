@@ -200,7 +200,7 @@
                     <span class="m-subheader__daterange-label">
                         <h3 class="m-subheader__title" style="padding-left: 0!important; margin: 0 0 0 2px!important;">پیشخوان
 									<i class="fa fa-chevron-left tshfontsize2" style="transform: translateY(3px); color: #aaaeb8; margin-right: 2px;"></i>
-                            <span class="m-subheader__daterange-title tshfontsize2" style="margin-right: 2px; margin-left: 2px;">تنظیمات اسلایدر</span>
+                            <span class="m-subheader__daterange-title tshfontsize2" style="margin-right: 2px; margin-left: 2px;">مشتریان</span>
                             <!--
                                     <i class="fa fa-chevron-left" style="transform: translateY(3px);color: #aaaeb8;"></i>
                                     <span class="m-subheader__daterange-title" style="margin-right: 2px;">نمایش همه ی پست ها</span>
@@ -224,7 +224,7 @@
                                     <a class="nav-link m-tabs__link active" data-toggle="tab" href="#m_user_profile_tab_1" role="tab">
                                         <i class="flaticon-share m--hide"></i>
                                         <cust_title>
-													تنظیمات اسلایدر
+													مشتریان
 												</cust_title>
                                     </a>
                                 </li>
@@ -242,86 +242,27 @@
                                                     <button class="btn btn-brand btn-sm" type="button" data-target="#uploader" data-toggle="modal" style="margin-top: 15px;">انتخاب عکس</button>
                                                 </div>
                                                 <div>
-                                                    <div class="col-lg-2 selected-img-div">
+                                                   <%foreach (var item in Models)
+                                                       {%>
+                                                            <div class="col-lg-2 selected-img-div">
                                                         <div class="selected-pic" style="position: relative;">
                                                             <button type="button" class="btn btn-danger delete-selected-pic" style="position: absolute; right: -8px; top: -10px; z-index: 999; padding: 4px 5px;"><i class="fa fa-trash"></i></button>
-                                                            <img src="AdminAssets/demo/default/media/img/misc/preservation-copy.jpg" class="uimg" data-name="نام عکس" data-label="لیبل" data-desc="توضیحات" alt="">
+                                                            <div style="display:none" id="PicId-<%=item.Path %>"><%=item.Path %></div>
+                                                            <img src="<%=item.Path %>" class="uimg" data-name="نام عکس" data-label="لیبل" data-desc="توضیحات" alt="">
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-2 selected-img-div">
-                                                        <div class="selected-pic" style="position: relative;">
-                                                            <button type="button" class="btn btn-danger delete-selected-pic" style="position: absolute; right: -8px; top: -10px; z-index: 999; padding: 4px 5px;"><i class="fa fa-trash"></i></button>
-                                                            <img src="AdminAssets/demo/default/media/img/misc/preservation-copy.jpg" class="uimg" data-name="نام عکس" data-label="لیبل" data-desc="توضیحات" alt="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-2 selected-img-div">
-                                                        <div class="selected-pic" style="position: relative;">
-                                                            <button type="button" class="btn btn-danger delete-selected-pic" style="position: absolute; right: -8px; top: -10px; z-index: 999; padding: 4px 5px;"><i class="fa fa-trash"></i></button>
-                                                            <img src="AdminAssets/demo/default/media/img/misc/preservation-copy.jpg" class="uimg" data-name="نام عکس" data-label="لیبل" data-desc="توضیحات" alt="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-2 selected-img-div">
-                                                        <div class="selected-pic" style="position: relative;">
-                                                            <button type="button" class="btn btn-danger delete-selected-pic" style="position: absolute; right: -8px; top: -10px; z-index: 999; padding: 4px 5px;"><i class="fa fa-trash"></i></button>
-                                                            <img src="AdminAssets/demo/default/media/img/misc/preservation-copy.jpg" class="uimg" data-name="نام عکس" data-label="لیبل" data-desc="توضیحات" alt="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-2 selected-img-div">
-                                                        <div class="selected-pic" style="position: relative;">
-                                                            <button type="button" class="btn btn-danger delete-selected-pic" style="position: absolute; right: -8px; top: -10px; z-index: 999; padding: 4px 5px;"><i class="fa fa-trash"></i></button>
-                                                            <img src="AdminAssets/demo/default/media/img/misc/preservation-copy.jpg" class="uimg" data-name="نام عکس" data-label="لیبل" data-desc="توضیحات" alt="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-2 selected-img-div">
-                                                        <div class="selected-pic" style="position: relative;">
-                                                            <button type="button" class="btn btn-danger delete-selected-pic" style="position: absolute; right: -8px; top: -10px; z-index: 999; padding: 4px 5px;"><i class="fa fa-trash"></i></button>
-                                                            <img src="AdminAssets/demo/default/media/img/misc/preservation-copy.jpg" class="uimg" data-name="نام عکس" data-label="لیبل" data-desc="توضیحات" alt="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-2 selected-img-div">
-                                                        <div class="selected-pic" style="position: relative;">
-                                                            <button type="button" class="btn btn-danger delete-selected-pic" style="position: absolute; right: -8px; top: -10px; z-index: 999; padding: 4px 5px;"><i class="fa fa-trash"></i></button>
-                                                            <img src="AdminAssets/demo/default/media/img/misc/preservation-copy.jpg" class="uimg" data-name="نام عکس" data-label="لیبل" data-desc="توضیحات" alt="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-2 selected-img-div">
-                                                        <div class="selected-pic" style="position: relative;">
-                                                            <button type="button" class="btn btn-danger delete-selected-pic" style="position: absolute; right: -8px; top: -10px; z-index: 999; padding: 4px 5px;"><i class="fa fa-trash"></i></button>
-                                                            <img src="AdminAssets/demo/default/media/img/misc/preservation-copy.jpg" class="uimg" data-name="نام عکس" data-label="لیبل" data-desc="توضیحات" alt="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-2 selected-img-div">
-                                                        <div class="selected-pic" style="position: relative;">
-                                                            <button type="button" class="btn btn-danger delete-selected-pic" style="position: absolute; right: -8px; top: -10px; z-index: 999; padding: 4px 5px;"><i class="fa fa-trash"></i></button>
-                                                            <img src="AdminAssets/demo/default/media/img/misc/preservation-copy.jpg" class="uimg" data-name="نام عکس" data-label="لیبل" data-desc="توضیحات" alt="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-2 selected-img-div">
-                                                        <div class="selected-pic" style="position: relative;">
-                                                            <button type="button" class="btn btn-danger delete-selected-pic" style="position: absolute; right: -8px; top: -10px; z-index: 999; padding: 4px 5px;"><i class="fa fa-trash"></i></button>
-                                                            <img src="AdminAssets/demo/default/media/img/misc/preservation-copy.jpg" class="uimg" data-name="نام عکس" data-label="لیبل" data-desc="توضیحات" alt="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-2 selected-img-div">
-                                                        <div class="selected-pic" style="position: relative;">
-                                                            <button type="button" class="btn btn-danger delete-selected-pic" style="position: absolute; right: -8px; top: -10px; z-index: 999; padding: 4px 5px;"><i class="fa fa-trash"></i></button>
-                                                            <img src="AdminAssets/demo/default/media/img/misc/preservation-copy.jpg" class="uimg" data-name="نام عکس" data-label="لیبل" data-desc="توضیحات" alt="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-2 selected-img-div">
-                                                        <div class="selected-pic" style="position: relative;">
-                                                            <button type="button" class="btn btn-danger delete-selected-pic" style="position: absolute; right: -8px; top: -10px; z-index: 999; padding: 4px 5px;"><i class="fa fa-trash"></i></button>
-                                                            <img src="AdminAssets/demo/default/media/img/misc/preservation-copy.jpg" class="uimg" data-name="نام عکس" data-label="لیبل" data-desc="توضیحات" alt="">
-                                                        </div>
-                                                    </div>
+                                                       <%}
+                                                       %>
+                                                  
                                                 </div>
                                             </div>
                                         </div>
+                                        <input id="NewPics" hidden/>
                                         <div class="m-portlet__foot m-portlet__foot--fit mt-3">
                                             <div class="m-form__actions">
                                                 <div class="row">
                                                     <div class="col-lg-12 tshtextleft" style="padding-left: 0;">
-                                                        <button type="submit" class="btn btn-accent m-btn m-btn--air m-btn--custom sendblg">ذخیره</button>
+                                                        <button type="submit" class="btn btn-accent m-btn m-btn--air m-btn--custom sendblg" onclick="return SaveClientPics()">ذخیره</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -490,6 +431,24 @@
     <script>
         var ActionsDemo = { init: function () { $(".summernote").summernote({ height: 350 }) } }; jQuery(document).ready(function () { ActionsDemo.init() });
     </script>
+    <script>
+        function SaveClientPics() {
+            Pics = $('#NewPics').val();
 
+            $.ajax({
+                url: 'Admin_Ajax/SaveClientsPic.aspx?Pics=' + Pics,
+                type: "post",
+                contentType: "application/json; charset=utf-8",
+                success: function (response) {
+
+                        location.reload(true);
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    alert("مشکل در برقراری ارتباط با سرور");
+                }
+            });
+        }
+
+    </script>
 
 </asp:Content>
