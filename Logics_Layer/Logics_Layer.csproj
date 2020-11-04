@@ -59,8 +59,17 @@
     <Compile Include="Admin\Profile_Logic.cs" />
     <Compile Include="Admin\ServiceList_Logic.cs" />
     <Compile Include="Admin\SliderSetting_Logic.cs" />
+    <Compile Include="Customer\ContactUs_Logic.cs" />
+    <Compile Include="Customer\CustomerIndex_Logic.cs" />
+    <Compile Include="Customer\CustomerMaster_Logic.cs" />
+    <Compile Include="Customer\CustomerOurTeam_Logic.cs" />
+    <Compile Include="Customer\CustomerServices_Logic.cs" />
+    <Compile Include="Customer\Customer_Portfolio_Logic.cs" />
     <Compile Include="Models\AdminModel.cs" />
+    <Compile Include="Models\CustomerMasterModel.cs" />
     <Compile Include="Models\EmailModel.cs" />
+    <Compile Include="Models\IndexModel.cs" />
+    <Compile Include="Models\KeyValueModel.cs" />
     <Compile Include="Models\MainSettingModel.cs" />
     <Compile Include="Models\MainVideoModel.cs" />
     <Compile Include="Models\MessageModel.cs" />
@@ -81,9 +90,7 @@
       <Name>DB_Connect</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Customer\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
