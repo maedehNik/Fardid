@@ -138,3 +138,4 @@
     </section>
 </div>
 </asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder_Script" runat="server"></asp:Content>

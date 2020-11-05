@@ -26,6 +26,7 @@ namespace Fardid
                 TextBox_SEO_D.Text = model.SEO_discription;
                 TextBox_SEO_K.Text = model.SEO_Keyword;
                 TextBox_Subject.Text = model.Subject;
+                
                 if(model.Show==1)
                 {
                     CheckBox_Show.Checked=true;
@@ -38,14 +39,7 @@ namespace Fardid
         protected void Button1_Click(object sender, EventArgs e)
         {
             var model = new PortfolioModel();
-            if (Request["Type"] == "Edit")
-            {
-                int Id = Convert.ToInt32(Request["Id"]);
-                model.PortfolioId = Id;
-            }else
-            {
-                model.PortfolioId = 0;
-            }
+            
 
             model.Discription= TextBox_discription.Text;
             model.Background_Id=Convert.ToInt32(TextBox_BackGround.Value);
@@ -61,7 +55,19 @@ namespace Fardid
                 model.Show = 0;
             }
 
-            Logic.AddPorufolio(model);
+            if (Request["Type"] == "Edit")
+            {
+                int Id = Convert.ToInt32(Request["Id"]);
+                model.PortfolioId = Id;
+                Logic.UpdatePorufolio(model);
+            }
+            else
+            {
+                model.PortfolioId = 0;
+                Logic.AddPorufolio(model);
+            }
+
+           
 
         }
     }

@@ -13,5 +13,6 @@ namespace Logics_Layer.Models
         public string Subject { get; set; }
         public int ShowMenu { get; set; }
         public int Deleted { get; set; }
+        public int Active { get; set; }
     }
 }

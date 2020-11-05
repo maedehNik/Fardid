@@ -21,7 +21,8 @@ namespace Fardid
                 TextBox_VideoLink.Text = model.VideoLink;
                 TextBox_VideoSub1.Text = model.VideoSub1;
                 TextBox_VideoSub2.Text = model.VideoSub2;
-                HiddenField_VideoBack.Value = model.MainVideoBackground_PicId.ToString();
+                HiddenField_VideoBack.Value = "4";
+                    //model.MainVideoBackground_PicId.ToString();
             }
         }
 

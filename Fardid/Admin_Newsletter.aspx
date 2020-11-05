@@ -85,7 +85,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">بستن</button>
-                        <button type="submit" class="btn btn-primary">ارسال</button>
+                        <button id="SendMailBTN" type="submit" class="btn btn-primary" onclick="return SendEmail()">ارسال</button>
                     </div>
                 </div>
             </div>
@@ -152,7 +152,7 @@
                                                     <th>تاریخ عضویت</th>
                                                     <th>وضعیت</th>
                                                     <th style="padding-left: 0;">عملیات
-                                                                <button class="btn btn-primary tshpcustom send-email-btn" style="float: left" data-toggle="modal" data-target="#send-email-modal" data-email="همه کاربران"><i class="flaticon-mail"></i>ارسال ایمیل به همه کاربران</button>
+                                                                <button class="btn btn-primary tshpcustom send-email-btn" style="float: left" data-toggle="modal" data-target="#send-email-modal" data-email="همه کاربران" onclick="return SendMail_All()"><i class="flaticon-mail"></i>ارسال ایمیل به همه کاربران</button>
                                                     </th>
                                                 </tr>
                                             </thead>
@@ -161,7 +161,7 @@
                                                     {%>
                                                 <tr>
                                                     <th scope="row"><% = item.Num %></th>
-                                                    <td><% = item.Email %></td>
+                                                    <td id="Mail-<%=item.EmailId %>"><% = item.Email %></td>
                                                     <td><% = item.Date %></td>
                                                     <td>
                                                         <% if (item.Active == 1)
@@ -249,8 +249,18 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder_Scripts" runat="server">
     <script>
         function SendMail(Id) {
-            $('#SendDiv').text(Id);
-           // alert("Done mail" + Id);
+            mail = $('#Mail-' + Id).text();
+            $('#email-target').val(mail);
+            //alert("Done mail" + $('#email-target').val());
+            return false;
+        }
+
+        function SendMail_All() {
+            
+            $('#email-target').val("همه کاربران");
+            $('#email-subject').val("");
+            $('#message-text').val("");
+            //alert("Done mail" + $('#email-target').val());
             return false;
         }
 
@@ -303,7 +313,58 @@
             });
 
         }
-        
+
+        function SendEmail() {
+            $("#SendMailBTN").prop('disabled', true);
+            mail = $('#email-target').val();
+            sub = $('#email-subject').val();
+            body_ = $('#message-text').val();
+
+            if (mail == "همه کاربران") {
+                $.ajax({
+                    url: 'Admin_Ajax/SendGroupEmail.aspx?Subject=' + sub + '&Body=' + body_,
+                    type: "post",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (response) {
+                        
+                            $("#SendMailBTN").prop('disabled', false);
+                            alert("ایمیل با موفقیت ارسال شد.")
+                            $('#email-target').val("");
+                            $('#email-subject').val("");
+                            $('#message-text').val("");
+                       
+
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        alert("مشکل در برقراری ارتباط با سرور");
+                    }
+                });
+
+
+            } else {
+                $.ajax({
+                    url: 'Admin_Ajax/SendMail.aspx?Mail=' + mail + '&Subject=' + sub + '&Body=' + body_,
+                    type: "post",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (response) {
+                        if (response == "Message sent") {
+                            $("#SendMailBTN").prop('disabled', false);
+                            $('#email-target').val("");
+                            $('#email-subject').val("");
+                            $('#message-text').val("");
+                            alert("ایمیل با موفقیت ارسال شد.")
+                            
+                        }
+
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        alert("مشکل در برقراری ارتباط با سرور");
+                    }
+                });
+            }
+            return false;
+        }
+
 
     </script>
 </asp:Content>

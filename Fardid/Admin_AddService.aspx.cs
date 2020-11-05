@@ -15,12 +15,16 @@ namespace Fardid
         protected void Page_Load(object sender, EventArgs e)
         {
             Logic = new AddServices_Logic();
-
-            if (!IsPostBack && Request["Type"] == "Edit")
+            string s = Request["Type"];
+            if (!IsPostBack && s == "Edit")
             {
-                int Id = Convert.ToInt32(Request["Id"]);
+                string ss = Request["Id"];
+                int Id = Convert.ToInt32(ss);
                 var model = Logic.GetService(Id);
 
+                TextBoxSub.Text = model.Subject;
+                TextBox_RSub.Text = model.RightSub;
+                TextBox1.Text = model.discription;
                 TextBox_SEO_D.Text = model.SEO_discription;
                 TextBox_SEO_K.Text = model.SEO_Keyword;
                 TextBox_VideoLink.Text = model.VideoLink;
@@ -29,6 +33,7 @@ namespace Fardid
                 HiddenField_BackGround.Value = model.Background_Id.ToString();
                 HiddenField_LeftPic.Value = model.LeftPic_Id.ToString();
                 HiddenField_RightPic.Value = model.RightPic_Id.ToString();
+                HiddenField_VideoBack.Value = model.VideoBackground_Id.ToString();
 
                 if (model.Show == 1)
                 {
@@ -41,7 +46,8 @@ namespace Fardid
         protected void Button1_Click(object sender, EventArgs e)
         {
             var model = new ServiceModel();
-            if (Request["Type"] == "Edit")
+            string s = Request["Type"];
+            if (s == "Edit")
             {
                 int Id = Convert.ToInt32(Request["Id"]);
                 model.S_Id = Id;
@@ -51,12 +57,16 @@ namespace Fardid
                 model.S_Id = 0;
             }
 
+            model.Subject= TextBoxSub.Text;
+            model.RightSub= TextBox_RSub.Text;
+            model.discription= TextBox1.Text;
             model.SEO_discription = TextBox_SEO_D.Text;
             model.SEO_Keyword= TextBox_SEO_K.Text;
             model.VideoLink= TextBox_VideoLink.Text;
             model.VideoSub1= TextBox_VideoSub1.Text;
             model.VideoSub2= TextBox_VideoSub2.Text;
             model.Background_Id=Convert.ToInt32(HiddenField_BackGround.Value);
+            model.VideoBackground_Id= Convert.ToInt32(HiddenField_VideoBack.Value);
             model.LeftPic_Id=Convert.ToInt32(HiddenField_LeftPic.Value);
             model.RightPic_Id=Convert.ToInt32(HiddenField_RightPic.Value);
 

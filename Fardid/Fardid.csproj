@@ -2120,13 +2120,20 @@
     <Content Include="AdminAssets\vendors\persianDatepicker.js" />
     <Content Include="Admin_AboutSetting.aspx" />
     <Content Include="Admin_AddService.aspx" />
+    <Content Include="Admin_Ajax\ActiveService.aspx" />
     <Content Include="Admin_Ajax\Active_NewsLetter.aspx" />
     <Content Include="Admin_Ajax\AddTeamMember.aspx" />
+    <Content Include="Admin_Ajax\DeActiveService.aspx" />
     <Content Include="Admin_Ajax\DeActive_NewsLetter.aspx" />
+    <Content Include="Admin_Ajax\DeletePortfolio.aspx" />
+    <Content Include="Admin_Ajax\DeleteService.aspx" />
     <Content Include="Admin_Ajax\DeleteTeamMember.aspx" />
     <Content Include="Admin_Ajax\GetTeamMemberData.aspx" />
     <Content Include="Admin_Ajax\SaveClientsPic.aspx" />
+    <Content Include="Admin_Ajax\SaveNewsLetter.aspx" />
     <Content Include="Admin_Ajax\SaveSliderPics.aspx" />
+    <Content Include="Admin_Ajax\SendGroupEmail.aspx" />
+    <Content Include="Admin_Ajax\SendMail.aspx" />
     <Content Include="Admin_Ajax\UpdateTeamMember.aspx" />
     <Content Include="Admin_Index.aspx" />
     <Content Include="Admin_MainSetting.aspx" />
@@ -2234,6 +2241,13 @@
     <Compile Include="Admin_AddService.aspx.designer.cs">
       <DependentUpon>Admin_AddService.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin_Ajax\ActiveService.aspx.cs">
+      <DependentUpon>ActiveService.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Ajax\ActiveService.aspx.designer.cs">
+      <DependentUpon>ActiveService.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin_Ajax\Active_NewsLetter.aspx.cs">
       <DependentUpon>Active_NewsLetter.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2248,12 +2262,33 @@
     <Compile Include="Admin_Ajax\AddTeamMember.aspx.designer.cs">
       <DependentUpon>AddTeamMember.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin_Ajax\DeActiveService.aspx.cs">
+      <DependentUpon>DeActiveService.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Ajax\DeActiveService.aspx.designer.cs">
+      <DependentUpon>DeActiveService.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin_Ajax\DeActive_NewsLetter.aspx.cs">
       <DependentUpon>DeActive_NewsLetter.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin_Ajax\DeActive_NewsLetter.aspx.designer.cs">
       <DependentUpon>DeActive_NewsLetter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Ajax\DeletePortfolio.aspx.cs">
+      <DependentUpon>DeletePortfolio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Ajax\DeletePortfolio.aspx.designer.cs">
+      <DependentUpon>DeletePortfolio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Ajax\DeleteService.aspx.cs">
+      <DependentUpon>DeleteService.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Ajax\DeleteService.aspx.designer.cs">
+      <DependentUpon>DeleteService.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin_Ajax\DeleteTeamMember.aspx.cs">
       <DependentUpon>DeleteTeamMember.aspx</DependentUpon>
@@ -2276,12 +2311,33 @@
     <Compile Include="Admin_Ajax\SaveClientsPic.aspx.designer.cs">
       <DependentUpon>SaveClientsPic.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin_Ajax\SaveNewsLetter.aspx.cs">
+      <DependentUpon>SaveNewsLetter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Ajax\SaveNewsLetter.aspx.designer.cs">
+      <DependentUpon>SaveNewsLetter.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin_Ajax\SaveSliderPics.aspx.cs">
       <DependentUpon>SaveSliderPics.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin_Ajax\SaveSliderPics.aspx.designer.cs">
       <DependentUpon>SaveSliderPics.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Ajax\SendGroupEmail.aspx.cs">
+      <DependentUpon>SendGroupEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Ajax\SendGroupEmail.aspx.designer.cs">
+      <DependentUpon>SendGroupEmail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Ajax\SendMail.aspx.cs">
+      <DependentUpon>SendMail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Ajax\SendMail.aspx.designer.cs">
+      <DependentUpon>SendMail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin_Ajax\UpdateTeamMember.aspx.cs">
       <DependentUpon>UpdateTeamMember.aspx</DependentUpon>

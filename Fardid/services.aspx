@@ -44,7 +44,7 @@
                 <% foreach (var item in Clients)
                     {%>
                 <li class="col-lg-1 col-lg-push-1 col-xs-3">
-                    <img src="<% item.Path %>" alt="">
+                    <img src="<%= item.Path %>" alt="">
                 </li>
                     <%} %>
                 
@@ -92,3 +92,4 @@
 </div>
 
 </asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder_Script" runat="server"></asp:Content>

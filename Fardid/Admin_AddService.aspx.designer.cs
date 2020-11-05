@@ -24,6 +24,24 @@ namespace Fardid
         protected global::System.Web.UI.WebControls.HiddenField HiddenField_BackGround;
 
         /// <summary>
+        /// TextBoxSub control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxSub;
+
+        /// <summary>
+        /// TextBox_RSub control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox_RSub;
+
+        /// <summary>
         /// HiddenField_LeftPic control.
         /// </summary>
         /// <remarks>
@@ -40,6 +58,15 @@ namespace Fardid
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField HiddenField_RightPic;
+
+        /// <summary>
+        /// TextBox1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox1;
 
         /// <summary>
         /// HiddenField_VideoBack control.

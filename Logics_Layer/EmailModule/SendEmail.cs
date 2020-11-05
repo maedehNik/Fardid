@@ -2,9 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
-using SmtpClient = MailKit.Net.Smtp.SmtpClient;
+using DB_Connect;
+using System.Data;
 
 namespace Logics_Layer.EmailModule
 {
@@ -19,35 +21,43 @@ namespace Logics_Layer.EmailModule
             _Password = password;
         }
 
-
-        public string Send_Email(string sub, string body, string mailAddress)
+        public string Send_Email(string Subject,string body,string Sendto)
         {
-            var mimeMessage = new MimeMessage();
-            mimeMessage.From.Add(new MailboxAddress("panda", _EmailFrom));
-            mimeMessage.To.Add(new MailboxAddress
-            (
-                mailAddress
-            ));
-            mimeMessage.Subject = sub; //Subject  
-            mimeMessage.Body = new TextPart("plain")
+            SmtpClient smtpClient = new SmtpClient("mail.fardid.co", 25)
             {
-                Text = body
+                Credentials = new System.Net.NetworkCredential(_EmailFrom,_Password),//"admin_fardid@fardid.co"
+                //"Fardid@Pass1234"
+                DeliveryMethod = SmtpDeliveryMethod.Network
             };
 
-            using (var client = new SmtpClient())
+            MailMessage mailMessage = new MailMessage("admin_fardid@fardid.co", Sendto);
+            mailMessage.Subject = Subject;
+            mailMessage.Body = body;
+            try
             {
-                client.Connect("info@fardid.co", 587, false);
-                client.Authenticate(
-                    _EmailFrom,
-                    _Password
-                );
-                client.SendAsync(mimeMessage);
-                client.DisconnectAsync(true);
-                return "The mail has been sent successfully !!";
-                
+                smtpClient.Send(mailMessage);
+                 return "Message sent";
             }
-
+            catch (Exception ex)
+            {
+                return ex.ToString();
+            }
         }
 
+        public List<string> AllMails()
+        {
+            var Mails = new List<string>();
+            PDBC db = new PDBC();
+            db.Connect();
+            DataTable dt = db.Select("SELECT [EmailAddress] FROM [tbl_Newsletter] WHERE IsActive=1");
+            db.DC();
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                Mails.Add(dt.Rows[i]["EmailAddress"].ToString());
+            }
+
+            return Mails;
+        }
     }
 }

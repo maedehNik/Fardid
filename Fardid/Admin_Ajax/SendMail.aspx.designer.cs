@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Fardid
+namespace Fardid.Admin_Ajax
 {
 
 
-    public partial class AboutUs
+    public partial class SendMail
     {
     }
 }

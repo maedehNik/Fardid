@@ -19,7 +19,8 @@ namespace Fardid
             Logic = new CustomerServices_Logic();
             if (Request["Id"] != null)
             {
-                int Id = Convert.ToInt32(Request["Id"]);
+                string s = Request["Id"];
+                int Id = Convert.ToInt32(s);
                 ServiceModel = Logic.GetService(Id);
 
             }

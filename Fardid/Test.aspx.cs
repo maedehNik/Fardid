@@ -14,28 +14,39 @@ namespace Fardid
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-        //    SendEmail sendEmail = new SendEmail("info@fardid.co", "Fardid@Pass1234");
-
-        //    Response.Write(sendEmail.Send_Email("Helloooo","Heloooo","fatemeh.nickaeen@gmail.com"));
-
-
-        SmtpClient smtpClient = new SmtpClient("info@fardid.co", 25);
-
-        smtpClient.Credentials = new System.Net.NetworkCredential("admin_fardid@fardid.co", "Fardid@Pass1234");
-        smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
-
-            MailMessage mailMessage = new MailMessage("admin_fardid@fardid.co", "fatemeh.nickaeen@gmail.com");
-        mailMessage.Subject = "Hellooo";
-        mailMessage.Body = "Helloooo";
-            try
-            {
-                smtpClient.Send(mailMessage);
-                Response.Write("Message sent");
+            SendEmail sendEmail = new SendEmail("admin_fardid@fardid.co", "Fardid@Pass1234");
+            int count = 0;
+            string s = "";
+            for(int i=0;i<100;i++)
+                {
+                s=sendEmail.Send_Email("Helloooo", "hi", "fatemeh.nickaeen@gmail.com");
+                if(s== "Message sent")
+                {
+                    count++;
+                }
             }
-            catch (Exception ex)
-            {
-                Response.Write(ex.ToString());
-            }
+
+
+            Response.Write(count);
+
+
+        //SmtpClient smtpClient = new SmtpClient("mail.fardid.co", 25);
+
+        //smtpClient.Credentials = new System.Net.NetworkCredential("admin_fardid@fardid.co", "Fardid@Pass1234");
+        //smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+
+        //    MailMessage mailMessage = new MailMessage("admin_fardid@fardid.co", "fatemeh.nickaeen@gmail.com");
+        //mailMessage.Subject = "Hellooo";
+        //mailMessage.Body = "Helloooo";
+        //    try
+        //    {
+        //        smtpClient.Send(mailMessage);
+        //        Response.Write("Message sent");
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Response.Write(ex.ToString());
+        //    }
         }
 }
 }

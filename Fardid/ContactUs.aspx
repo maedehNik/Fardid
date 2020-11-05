@@ -45,7 +45,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                    <%-- <input type="submit" value="SEND MESSAGE" id="sendinp">--%>
                     <asp:Button ID="Button1" runat="server" Text="SEND MESSAGE" OnClick="Button1_Click" Style="background-color: #573285; color: white; border: none; transition: all ease .5s; padding: 2px 4px; font-size: 13px;" Width="90 px"/>
-                    <asp:Button ID="Button2" runat="server" Text="Button" OnClick="Button2_Click" />
+                   <%-- <asp:Button ID="Button2" runat="server" Text="Button" OnClick="Button2_Click" />--%>
                 </div>
             </div>
         </div>
@@ -53,3 +53,4 @@
 </div>
 
 </asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder_Script" runat="server"></asp:Content>

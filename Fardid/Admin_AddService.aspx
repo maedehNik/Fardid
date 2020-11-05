@@ -246,7 +246,7 @@
 															</div>
 															<div class="m-section__content container-fluid tshtextright">
 																<button class="btn btn-brand btn-sm mt-3" type="button" data-target="#uploader" data-toggle="modal">انتخاب عکس</button>
-                                                                <asp:HiddenField ID="HiddenField_BackGround" runat="server" />
+                                                                <asp:HiddenField ID="HiddenField_BackGround" runat="server" Value="4"/>
 															</div>
 														</div>
 														<div class="col-12">
@@ -260,13 +260,15 @@
 														<div class="form-group col-lg-6 mt-4" style="padding-top: 0;">
 															<div class="col-12">
 																<label for="sefs8" class="form-control-label">عنوان</label>
-																<input type="text" name="sefs8" id="sefs8" class="form-control m-input" placeholder="" value="">
+																<%--<input type="text" name="sefs8" id="sefs8" class="form-control m-input" placeholder="" value="">--%>
+																<asp:TextBox ID="TextBoxSub" runat="server" CssClass="form-control m-input" ></asp:TextBox>
 															</div>
 														</div>
 														<div class="form-group col-lg-6 mt-4" style="padding-top: 0;">
 															<div class="col-12">
 																<label for="sefs9" class="form-control-label">عنوان سمت راست</label>
-																<input type="text" name="sefs9" id="sefs9" class="form-control m-input" placeholder="" value="">
+																<%--<input type="text" name="sefs9" id="sefs9" class="form-control m-input" placeholder="" value="">--%>
+                                                                <asp:TextBox ID="TextBox_RSub" runat="server" CssClass="form-control m-input" ></asp:TextBox>
 															</div>
 														</div>
 													</div>
@@ -277,7 +279,7 @@
 																	<label class="form-control-label col-12">تصویر سمت چپ</label>
 																	<div class="m-section__content tshtextright col-12">
 																		<button class="btn btn-brand btn-sm" type="button" data-target="#uploader" data-toggle="modal" style="margin-bottom: 30px;">انتخاب عکس</button>
-                                                                        <asp:HiddenField ID="HiddenField_LeftPic" runat="server" />
+                                                                        <asp:HiddenField ID="HiddenField_LeftPic" runat="server" Value="7"/>
 																	</div>
 																</div>
 																<div class="col-md-6">
@@ -296,7 +298,7 @@
 																	<label class="form-control-label col-12">تصویر سمت راست</label>
 																	<div class="m-section__content tshtextright col-12">
 																		<button class="btn btn-brand btn-sm" type="button" data-target="#uploader" data-toggle="modal" style="margin-bottom: 30px;">انتخاب عکس</button>
-                                                                        <asp:HiddenField ID="HiddenField_RightPic" runat="server" />
+                                                                        <asp:HiddenField ID="HiddenField_RightPic" runat="server" Value="4" />
 																	</div>
 																</div>
 																<div class="col-md-6">
@@ -313,7 +315,8 @@
 													<div class="form-group col-12">
 														<label for="sefs10" class="col-form-label tshtextright">توضیحات</label>
 														<div>
-															<textarea maxlength="150" id="sefs10" name="sefs10" class="form-control m-input" placeholder="" style="padding-top: 20px;min-height: 70px"></textarea>
+															<%--<textarea maxlength="150" id="sefs10" name="sefs10" class="form-control m-input" placeholder="" style="padding-top: 20px;min-height: 70px"></textarea>--%>
+															<asp:TextBox ID="TextBox1" runat="server" CssClass="form-control m-input" Style="padding-top: 10px; min-height: 70px" TextMode="MultiLine" ></asp:TextBox>
 														</div>
 													</div>
 													<div class="row">
@@ -325,7 +328,7 @@
 															</div>
 															<div class="m-section__content tshtextright col-12">
 																<button class="btn btn-brand btn-sm mt-3" type="button" data-target="#uploader" data-toggle="modal">انتخاب عکس</button>
-                                                                <asp:HiddenField ID="HiddenField_VideoBack" runat="server" />
+                                                                <asp:HiddenField ID="HiddenField_VideoBack" runat="server" Value="8" />
 															</div>
 														</div>
 														<div class="col-12">

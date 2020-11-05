@@ -253,7 +253,7 @@
                                                             <label for="postsubj" class="form-control-label">تصویر پس زمینه</label>
                                                             <div class="m-section__content container-fluid tshtextright" style="padding: 0;">
                                                                 <button class="btn btn-brand btn-sm" type="button" data-target="#uploader" data-toggle="modal" style="margin-bottom: 30px;">انتخاب عکس</button>
-                                                                <asp:HiddenField  ID="TextBox_BackGround" runat="server" ></asp:HiddenField>
+                                                                <asp:HiddenField  ID="TextBox_BackGround" runat="server" value="4"></asp:HiddenField>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
@@ -271,7 +271,7 @@
                                                         <div class="col-md-6">
                                                             <label for="postsubj" class="form-control-label">لوگو</label>
                                                             <div class="m-section__content container-fluid tshtextright" style="padding: 0;">
-                                                                <asp:HiddenField  ID="TextBox_Logo" runat="server"></asp:HiddenField>
+                                                                <asp:HiddenField  ID="TextBox_Logo" runat="server" Value="2"></asp:HiddenField>
                                                                 <button class="btn btn-brand btn-sm" type="button" data-target="#uploader" data-toggle="modal" style="margin-bottom: 30px;">انتخاب عکس</button>
                                                             </div>
                                                         </div>
