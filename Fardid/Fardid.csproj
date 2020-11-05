@@ -48,6 +48,9 @@
       <HintPath>..\packages\MD.PersianDateTime.4.2.0\lib\MD.PersianDateTime.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationFramework" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
@@ -83,9 +86,6 @@
     </Reference>
     <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
@@ -2113,6 +2113,7 @@
     <Content Include="Admin_Ajax\AddTeamMember.aspx" />
     <Content Include="Admin_Ajax\DeActive_NewsLetter.aspx" />
     <Content Include="Admin_Ajax\DeleteTeamMember.aspx" />
+    <Content Include="Admin_Ajax\GetTeamMemberData.aspx" />
     <Content Include="Admin_Ajax\SaveClientsPic.aspx" />
     <Content Include="Admin_Ajax\SaveSliderPics.aspx" />
     <Content Include="Admin_Index.aspx" />
@@ -2248,6 +2249,13 @@
     </Compile>
     <Compile Include="Admin_Ajax\DeleteTeamMember.aspx.designer.cs">
       <DependentUpon>DeleteTeamMember.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Ajax\GetTeamMemberData.aspx.cs">
+      <DependentUpon>GetTeamMemberData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Ajax\GetTeamMemberData.aspx.designer.cs">
+      <DependentUpon>GetTeamMemberData.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin_Ajax\SaveClientsPic.aspx.cs">
       <DependentUpon>SaveClientsPic.aspx</DependentUpon>

@@ -147,5 +147,43 @@ namespace Logics_Layer.Admin
                 return "fail";
             }
         }
+
+        public OurTeamModel GetMember(int Id)
+        {
+
+            List<ExcParameters> parss = new List<ExcParameters>();
+            ExcParameters par = new ExcParameters
+            {
+                _KEY = "@T_Id",
+                _VALUE = Id
+            };
+            parss.Add(par);
+
+            base.Connect();
+            DataTable dt = base.Select("SELECT [T_Id],[Name],[Subject],A.[PicId],B.PicAddress,Deleted,B.PicThumbnailAddress FROM [tbl_TeamMembers] as A inner join [tbl_PicUploader] as B on A.PicId=B.PicId where T_Id=@T_Id",parss);
+            base.DC();
+            var model = new OurTeamModel();
+            if (dt.Rows.Count!=0)
+            {
+                model.T_Id = Convert.ToInt32(dt.Rows[0]["T_Id"]);
+                model.deleted = Convert.ToInt32(dt.Rows[0]["Deleted"]);
+                model.Name = dt.Rows[0]["Name"].ToString();
+                model.Job = dt.Rows[0]["Subject"].ToString();
+                model.PicId = Convert.ToInt32(dt.Rows[0]["PicId"]);
+                model.Pic_Path = dt.Rows[0]["PicAddress"].ToString();
+            }
+            else
+            {
+                model.T_Id = 0;
+                model.deleted = 0;
+                model.Name = "";
+                model.Job = "";
+                model.PicId = 0;
+                model.Pic_Path = "";
+            }
+
+            return model;
+        }
+
     }
 }

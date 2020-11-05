@@ -38,6 +38,7 @@
                             <span aria-hidden="true">×</span>
                         </button>
                     </div>
+                    <div style="display:none" id="UpdateId"></div>
                     <div class="modal-body">
                         <div class="form-group">
                             <img src="" id="team-edit-img" alt="" style="width: 100%;">
@@ -146,7 +147,7 @@
                                 <%if (item.deleted == 0)
                                     {%>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                    <button class="col-12 btn btn-primary edit-team-btn" data-toggle="modal" data-target="#edit-team" data-name="MOHAMMAD HOSSEIN MAJIDPOUR" data-title="GRAPHIC DESIGNER" data-img="./AdminAssets/app/media/img/users/user4.jpg">
+                                    <button class="col-12 btn btn-primary edit-team-btn" data-toggle="modal" data-target="#edit-team" onclick="return Updatebtn(<%= item.T_Id %>)">
                                         <i class="fa fa-edit"></i>
                                         ویرایش
                                     </button>
@@ -215,9 +216,17 @@
             Name_ = $("#team-add-name").val();
             Subjecy__ = $("#team-add-title").val();
 
+            const PostJson = {
+                'picId': picId,
+                'Name': Name_,
+                'Subject': Subjecy__
+            };
+
+
             $.ajax({
-                url: 'Admin_Ajax/DeleteTeamMember.aspx?Id=' + Id,
+                url: 'Admin_Ajax/AddTeamMember.aspx',
                 type: "post",
+                data: JSON.stringify(PostJson),
                 contentType: "application/json; charset=utf-8",
                 success: function (response) {
                     if (response == "Success") {
@@ -230,6 +239,27 @@
                 }
             });
 
+        }
+
+        function Updatebtn(Id) {
+
+            $.ajax({
+                url: 'Admin_Ajax/DeleteTeamMember.aspx?Id=' + Id,
+                type: "post",
+                contentType: "application/json; charset=utf-8",
+                success: function (response) {
+                    var obj = JSON.parse(response);
+                    $("#ChangePic").val(obj.PicId);
+                    $("#UpdateId").val(obj.T_Id);
+                    $("#team-edit-name").val(obj.Name);
+                    $("#team-edit-title").val(obj.Job);
+                    $("#team-edit-img").attr("src", obj.Pic_Path);
+
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    alert("مشکل در برقراری ارتباط با سرور");
+                }
+            });
         }
     </script>
 

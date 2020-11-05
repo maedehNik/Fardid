@@ -9,21 +9,25 @@ using Logics_Layer.Models;
 
 namespace Fardid.Admin_Ajax
 {
-    public partial class AddAdmin : System.Web.UI.Page
+    public partial class AddTeamMember : System.Web.UI.Page
     {
         private OurTeam_Logic logic;
         protected void Page_Load(object sender, EventArgs e)
         {
             logic = new OurTeam_Logic();
-            if (Request["_Data"] != null)
+            if (Request["picId"] != null && Request["Name"] != null && Request["Subject"] != null)
             {
-                var model = new OurTeamModel();
+
+                var model = new OurTeamModel()
+                {T_Id=0,
+                deleted=0,
+                PicId=Convert.ToInt32(Request["picId"]),
+                Name= Request["Name"],
+                Job = Request["Subject"],
+                Pic_Path=""
+                };
                 
-
-
-
-                int Id = Convert.ToInt32(Request["Id"]);
-                Response.Write(logic.DeleteMember(Id));
+                Response.Write(logic.AddMember(model));
             }
         }
     }
