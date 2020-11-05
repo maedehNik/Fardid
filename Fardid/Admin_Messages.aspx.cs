@@ -34,37 +34,37 @@ namespace Fardid
 
         protected void Unnamed_ServerClick(object sender, EventArgs e)
         {
-            MyButton btn =(MyButton)sender;
+            //LinkButton btn =(LinkButton)sender;
 
 
-            int Id = Convert.ToInt32(btn.Item_Id);
-            int index = Convert.ToInt32(btn.RowNum) - 1;
-            Logic.SeenMessage(Id);
-            var model = messageModels[index];
-            if (Id == model.M_Id)
-            {
-                TextBoxModalName.Text = model.Name;
-                TextBoxModalMail.Text = model.Email;
-                TextBoxModelSub.Text = model.Subject;
-                TextBox1.Text = model.Message;
-            }
-            else
-            {
-                foreach (var item in messageModels)
-                {
-                    if (item.M_Id == Id)
-                    {
-                        model = item;
-                        TextBoxModalName.Text = model.Name;
-                        TextBoxModalMail.Text = model.Email;
-                        TextBoxModelSub.Text = model.Subject;
-                        TextBox1.Text = model.Message;
-                    }
+            //int Id = Convert.ToInt32(btn.Item_Id);
+            //int index = Convert.ToInt32(btn.RowNum) - 1;
+            //Logic.SeenMessage(Id);
+            //var model = messageModels[index];
+            //if (Id == model.M_Id)
+            //{
+            //    TextBoxModalName.Text = model.Name;
+            //    TextBoxModalMail.Text = model.Email;
+            //    TextBoxModelSub.Text = model.Subject;
+            //    TextBox1.Text = model.Message;
+            //}
+            //else
+            //{
+            //    foreach (var item in messageModels)
+            //    {
+            //        if (item.M_Id == Id)
+            //        {
+            //            model = item;
+            //            TextBoxModalName.Text = model.Name;
+            //            TextBoxModalMail.Text = model.Email;
+            //            TextBoxModelSub.Text = model.Subject;
+            //            TextBox1.Text = model.Message;
+            //        }
 
-                }
-            }
+            //    }
+            //}
 
-            Page.ClientScript.RegisterStartupScript(GetType(), "modelBox", "$('#view-message').modal('show');", true);
+            //Page.ClientScript.RegisterStartupScript(GetType(), "modelBox", "$('#view-message').modal('show');", true);
         }
     }
 }

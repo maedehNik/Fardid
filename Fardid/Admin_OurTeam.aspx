@@ -224,21 +224,23 @@
 
 
             $.ajax({
-                url: 'Admin_Ajax/AddTeamMember.aspx',
+                url: '/Admin_Ajax/AddTeamMember.aspx',
                 type: "post",
-                data: JSON.stringify(PostJson),
+                
                 contentType: "application/json; charset=utf-8",
                 success: function (response) {
                     if (response == "Success") {
-                        location.reload(true);
+                        //location.reload(true);
+                        
                     }
-
+                    alert(response);
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     alert("مشکل در برقراری ارتباط با سرور");
                 }
             });
 
+            return false;
         }
 
         function Updatebtn(Id) {

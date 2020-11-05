@@ -7,9 +7,10 @@ using System.Web.UI.WebControls;
 using Logics_Layer.Admin;
 using Logics_Layer.Models;
 
+
 namespace Fardid.Admin_Ajax
 {
-    public partial class AddTeamMember : System.Web.UI.Page
+    public partial class UpdateTeamMember : System.Web.UI.Page
     {
         private OurTeam_Logic logic;
         protected void Page_Load(object sender, EventArgs e)
@@ -19,15 +20,16 @@ namespace Fardid.Admin_Ajax
             {
 
                 var model = new OurTeamModel()
-                {T_Id= Convert.ToInt32(Request["Id"]),
-                deleted=0,
-                PicId=Convert.ToInt32(Request["picId"]),
-                Name= Request["Name"],
-                Job = Request["Subject"],
-                Pic_Path=""
+                {
+                    T_Id = 0,
+                    deleted = 0,
+                    PicId = Convert.ToInt32(Request["picId"]),
+                    Name = Request["Name"],
+                    Job = Request["Subject"],
+                    Pic_Path = ""
                 };
-                
-                Response.Write(logic.UpdateMember(model));
+
+                Response.Write(logic.AddMember(model));
             }
         }
     }
