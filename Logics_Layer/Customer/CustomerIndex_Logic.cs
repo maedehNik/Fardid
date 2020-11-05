@@ -113,6 +113,19 @@ namespace Logics_Layer.Customer
                 mainVideo.MainVideoBackground_Pic = "";
             }
             /////////
+            ////////VideoLogo
+            dt = base.Select("SELECT A.[PicId],[PicAddress],[PicThumbnailAddress] FROM [tbl_PicUploader] as A inner join [tbl_PicUse] as B on A.PicId=B.PicId where B.PicUseAs LIke N'VideoLogo'");
+            if (dt.Rows.Count != 0)
+            {
+                mainVideo.MainVideoLogo_Pic = dt.Rows[0]["PicAddress"].ToString();
+                mainVideo.MainVideoBackground_PicId = Convert.ToInt32(dt.Rows[0]["PicId"]);
+            }
+            else
+            {
+                mainVideo.MainVideoLogo_Pic = "";
+                mainVideo.MainVideoBackground_PicId = 0 ;
+            }
+
             base.DC();
 
             var model = new IndexModel()

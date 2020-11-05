@@ -73,6 +73,7 @@
     <Compile Include="Admin\ServiceList_Logic.cs" />
     <Compile Include="Admin\SliderSetting_Logic.cs" />
     <Compile Include="Customer\ContactUs_Logic.cs" />
+    <Compile Include="Customer\CustomerAboutUs_Logic.cs" />
     <Compile Include="Customer\CustomerIndex_Logic.cs" />
     <Compile Include="Customer\CustomerMaster_Logic.cs" />
     <Compile Include="Customer\CustomerOurTeam_Logic.cs" />

@@ -9,7 +9,7 @@ using System.Data;
 
 namespace Logics_Layer.Admin
 {
-    class Portfolio_Logic:PDBC
+    public class Portfolio_Logic:PDBC
     {
         public List<PortfolioListModel> GetPortfolio()
         {

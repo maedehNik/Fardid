@@ -3,64 +3,32 @@
     <div id="main">
     <section class="slider col-lg-12 col-md=12 col-sm-12 col-xs-12">
         <div class="slider-inner">
-            <div style="background-image: url('assets/images/slider.jpeg')"></div>
-            <div style="background-image: url('assets/images/slider.jpeg')"></div>
-            <div style="background-image: url('assets/images/slider.jpeg')"></div>
-            <div style="background-image: url('assets/images/slider.jpeg')"></div>
-            <div style="background-image: url('assets/images/slider.jpeg')"></div>
-            <div style="background-image: url('assets/images/slider.jpeg')"></div>
-            <div style="background-image: url('assets/images/slider.jpeg')"></div>
-            <div style="background-image: url('assets/images/slider.jpeg')"></div>
-            <div style="background-image: url('assets/images/slider.jpeg')"></div>
-            <div style="background-image: url('assets/images/slider.jpeg')"></div>
-            <div style="background-image: url('assets/images/slider.jpeg')"></div>
-            <div style="background-image: url('assets/images/slider.jpeg')"></div>
+            <% foreach (var item in Models.Sliders)
+                {%>
+            <div style="background-image: url('<%= item.Path %>')"></div>
+               <% } %>
+            
         </div>
         <div class="scroll"></div>
     </section>
     <section class="prd-section prd-li-p-xs sm-li-padding col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="container">
             <ul>
+                
+                <% foreach (var item in Models.portfolios)
+                    {%>
                 <li class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div>
-                        <div class="inner-prd" style="background-image: url('assets/images/slider.jpeg');">
-                            <h3 class="prd-bg-rtl">LAXMI</h3>
+                        <div class="inner-prd" style="background-image: url('<%= item.Background_Path %>');">
+                            <h3 class="prd-bg-rtl"><%= item.Subject %></h3>
                             <div class="rgba-bg"></div>
-                            <img src="assets/images/logo.png" alt="PRD Logo">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consectetur eius ullam. Ab accusantium, asperiores aut blanditiis dolorem earum error eum illum ipsa ipsum nam natus neque nisi nobis nostrum officia porro quaerat quidem quis quisquam recusandae repudiandae sit suscipit?</p>
+                            <img src="<%= item.Logo_Path %>" alt="PRD Logo">
+                            <p><%= item.Discription %></p>
                         </div>
                     </div>
                 </li>
-                <li class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div>
-                        <div class="inner-prd" style="background-image: url('assets/images/slider.jpeg');">
-                            <h3 class="prd-bg-ltr">LAXMI</h3>
-                            <div class="rgba-bg"></div>
-                            <img src="assets/images/logo.png" alt="PRD Logo">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consectetur eius ullam. Ab accusantium, asperiores aut blanditiis dolorem earum error eum illum ipsa ipsum nam natus neque nisi nobis nostrum officia porro quaerat quidem quis quisquam recusandae repudiandae sit suscipit?</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div>
-                        <div class="inner-prd" style="background-image: url('assets/images/slider.jpeg');">
-                            <h3 class="prd-bg-rtl">LAXMI</h3>
-                            <div class="rgba-bg"></div>
-                            <img src="assets/images/logo.png" alt="PRD Logo">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consectetur eius ullam. Ab accusantium, asperiores aut blanditiis dolorem earum error eum illum ipsa ipsum nam natus neque nisi nobis nostrum officia porro quaerat quidem quis quisquam recusandae repudiandae sit suscipit?</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div>
-                        <div class="inner-prd" style="background-image: url('assets/images/slider.jpeg');">
-                            <h3 class="prd-bg-ltr">LAXMI</h3>
-                            <div class="rgba-bg"></div>
-                            <img src="assets/images/logo.png" alt="PRD Logo">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consectetur eius ullam. Ab accusantium, asperiores aut blanditiis dolorem earum error eum illum ipsa ipsum nam natus neque nisi nobis nostrum officia porro quaerat quidem quis quisquam recusandae repudiandae sit suscipit?</p>
-                        </div>
-                    </div>
-                </li>
+                   <% } %>
+                
             </ul>
         </div>
     </section>
@@ -70,27 +38,13 @@
                 SOME OF OUR CLIENTS
             </h2>
             <ul class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <%foreach (var item in Models.Clients)
+                    {%>
                 <li class="col-lg-1 col-lg-push-1 col-xs-3">
-                    <img src="assets/images/logo.png" alt="">
+                    <img src="<%= item.Path %>" alt="">
                 </li>
-                <li class="col-lg-1 col-lg-push-1 col-xs-3">
-                    <img src="assets/images/logo.png" alt="">
-                </li>
-                <li class="col-lg-1 col-lg-push-1 col-xs-3">
-                    <img src="assets/images/logo.png" alt="">
-                </li>
-                <li class="col-lg-1 col-lg-push-1 col-xs-3">
-                    <img src="assets/images/logo.png" alt="">
-                </li>
-                <li class="col-lg-1 col-lg-push-1 col-xs-3 not-de-translate">
-                    <img src="assets/images/logo.png" alt="">
-                </li>
-                <li class="col-lg-1 col-lg-push-1 col-xs-3 not-de-translate">
-                    <img src="assets/images/logo.png" alt="">
-                </li>
-                <li class="col-lg-1 col-lg-push-1 col-xs-3 not-de-translate">
-                    <img src="assets/images/logo.png" alt="">
-                </li>
+                   <% } %>
+                
             </ul>
             <div class="text-center">
                 <a href="portfolio.aspx">
@@ -100,15 +54,15 @@
         </div>
     </section>
     <section class="video-section col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <img class="video-bg" src="assets/images/video-bg.png" alt="Video BG">
+        <img class="video-bg" src="<%= Models.mainVideo.MainVideoBackground_Pic %>" alt="Video BG">
         <div class="inner-video">
-            <img src="assets/images/logo2.png" alt="">
+            <img src="<%= Models.mainVideo.MainVideoLogo_Pic %>" alt="">
             <div>
                 <h3>
-                    MAKE A VIDEO CLIP
+                   <%= Models.mainVideo.VideoSub1 %>
                 </h3>
                 <h2>
-                    FOR LAXMI BRAND
+                   <%= Models.mainVideo.VideoSub2 %>
                 </h2>
             </div>
         </div>

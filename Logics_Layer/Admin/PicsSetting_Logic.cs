@@ -9,7 +9,7 @@ using Logics_Layer.Models;
 
 namespace Logics_Layer.Admin
 {
-    class PicsSetting_Logic:PDBC
+    public class PicsSetting_Logic:PDBC
     {
         public PicsSettingModel GetPicsSetting()
         {

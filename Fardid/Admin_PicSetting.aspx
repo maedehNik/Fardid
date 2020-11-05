@@ -247,13 +247,14 @@
                                                             <label class="form-control-label col-12">لوگو اصلی</label>
                                                             <div class="m-section__content tshtextright col-12">
                                                                 <button class="btn btn-brand btn-sm" type="button" data-target="#uploader" data-toggle="modal" style="margin-bottom: 30px;">انتخاب عکس</button>
+                                                                <input hidden id="MainLogoId" value="<%= Models.MainLogo_Id %>"/>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="col-12 selected-img-div" style="margin: 0 0 30px 0;">
                                                                 <div class="selected-pic" style="position: relative;">
                                                                     <button type="button" class="btn btn-danger delete-selected-pic" style="position: absolute; right: -8px; top: -10px; z-index: 999; padding: 4px 5px;"><i class="fa fa-trash"></i></button>
-                                                                    <img src="AdminAssets/demo/default/media/img/misc/preservation-copy.jpg" class="uimg" data-name="نام عکس" data-label="لیبل" data-desc="توضیحات" alt="">
+                                                                    <img src="<%= Models.MainLogo_Path %>" class="uimg" data-name="نام عکس" data-label="لیبل" data-desc="توضیحات" alt="">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -265,13 +266,14 @@
                                                             <label class="form-control-label col-12">فو آیکن</label>
                                                             <div class="m-section__content tshtextright col-12">
                                                                 <button class="btn btn-brand btn-sm" type="button" data-target="#uploader" data-toggle="modal" style="margin-bottom: 30px;">انتخاب عکس</button>
+                                                                <input hidden id="FoIconId" value="<%= Models.FoIcon_Id %>"/>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="col-12 selected-img-div" style="margin: 0 0 30px 0;">
                                                                 <div class="selected-pic" style="position: relative;">
                                                                     <button type="button" class="btn btn-danger delete-selected-pic" style="position: absolute; right: -8px; top: -10px; z-index: 999; padding: 4px 5px;"><i class="fa fa-trash"></i></button>
-                                                                    <img src="AdminAssets/demo/default/media/img/misc/preservation-copy.jpg" class="uimg" data-name="نام عکس" data-label="لیبل" data-desc="توضیحات" alt="">
+                                                                    <img src="<%= Models.FoIcon_Path %>" class="uimg" data-name="نام عکس" data-label="لیبل" data-desc="توضیحات" alt="">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -285,13 +287,14 @@
                                                             <label class="form-control-label col-12">لوگو فوتر</label>
                                                             <div class="m-section__content tshtextright col-12">
                                                                 <button class="btn btn-brand btn-sm" type="button" data-target="#uploader" data-toggle="modal" style="margin-bottom: 30px;">انتخاب عکس</button>
+                                                                <input hidden id="FooterLogoId" value="<%= Models.FooterLogo_Id %>"/>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="col-12 selected-img-div" style="margin: 0 0 30px 0;">
                                                                 <div class="selected-pic" style="position: relative;">
                                                                     <button type="button" class="btn btn-danger delete-selected-pic" style="position: absolute; right: -8px; top: -10px; z-index: 999; padding: 4px 5px;"><i class="fa fa-trash"></i></button>
-                                                                    <img src="AdminAssets/demo/default/media/img/misc/preservation-copy.jpg" class="uimg" data-name="نام عکس" data-label="لیبل" data-desc="توضیحات" alt="">
+                                                                    <img src="<%= Models.FooterLogo_Path %>" class="uimg" data-name="نام عکس" data-label="لیبل" data-desc="توضیحات" alt="">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -303,13 +306,14 @@
                                                             <label class="form-control-label col-12">لوگو ویدیو ها</label>
                                                             <div class="m-section__content tshtextright col-12">
                                                                 <button class="btn btn-brand btn-sm" type="button" data-target="#uploader" data-toggle="modal" style="margin-bottom: 30px;">انتخاب عکس</button>
+                                                                <input hidden id="VideoLogoId" value="<%= Models.VideoLogo_Id %>"/>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="col-12 selected-img-div" style="margin: 0 0 30px 0;">
                                                                 <div class="selected-pic" style="position: relative;">
                                                                     <button type="button" class="btn btn-danger delete-selected-pic" style="position: absolute; right: -8px; top: -10px; z-index: 999; padding: 4px 5px;"><i class="fa fa-trash"></i></button>
-                                                                    <img src="AdminAssets/demo/default/media/img/misc/preservation-copy.jpg" class="uimg" data-name="نام عکس" data-label="لیبل" data-desc="توضیحات" alt="">
+                                                                    <img src="<%= Models.VideoLogo_Path %>" class="uimg" data-name="نام عکس" data-label="لیبل" data-desc="توضیحات" alt="">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -323,13 +327,14 @@
                                                             <label class="form-control-label col-12">لوگو منو</label>
                                                             <div class="m-section__content tshtextright col-12">
                                                                 <button class="btn btn-brand btn-sm" type="button" data-target="#uploader" data-toggle="modal" style="margin-bottom: 30px;">انتخاب عکس</button>
+                                                                <input hidden id="MenuLogoId" value="<%= Models.MenuLogo_Id %>"/>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="col-12 selected-img-div" style="margin: 0 0 30px 0;">
                                                                 <div class="selected-pic" style="position: relative;">
                                                                     <button type="button" class="btn btn-danger delete-selected-pic" style="position: absolute; right: -8px; top: -10px; z-index: 999; padding: 4px 5px;"><i class="fa fa-trash"></i></button>
-                                                                    <img src="AdminAssets/demo/default/media/img/misc/preservation-copy.jpg" class="uimg" data-name="نام عکس" data-label="لیبل" data-desc="توضیحات" alt="">
+                                                                    <img src="<%= Models.MenuLogo_Path %>" class="uimg" data-name="نام عکس" data-label="لیبل" data-desc="توضیحات" alt="">
                                                                 </div>
                                                             </div>
                                                         </div>

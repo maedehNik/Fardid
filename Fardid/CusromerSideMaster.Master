@@ -30,10 +30,10 @@
                 <ul class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-r-0 p-l-0 m-b-0">
                     <li class="menu-toggle col-sm-2"><i class="fal fa-bars"></i></li>
                     <li class="search-li">
-                        <form action="">
+                        <div action="">
                         <button type="submit"><i class="fal fa-search"></i></button>
                         <input type="text" placeholder="Search">
-                        </form>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -41,7 +41,7 @@
         <div class="nav-bg">
             <nav class="col-lg-6 col-md-6 col-sm-6 col-xs-10">
                 <ul>
-                    <img src="assets/images/logo2.png" alt="Logo">
+                    <img src="<%= MasterModels.SitePics.MainLogo_Path %>" alt="Logo">
                     <li class="menu-active">
                         <a href="index.aspx">HOME
                         </a>
@@ -51,22 +51,14 @@
                         </a>
                     </li>
                     <ul class="sub-menu">
+                        <% foreach (var item in MasterModels.ServiceList)
+                            {%>
                         <li>
-                            <a href="services.aspx">influencer marketing
+                            <a href="services.aspx?Id="+<%= item.Key %> > <%=item.Value %>
                             </a>
                         </li>
-                        <li>
-                            <a href="services.aspx">advertising
-                            </a>
-                        </li>
-                        <li>
-                            <a href="services.aspx">idea
-                            </a>
-                        </li>
-                        <li>
-                            <a href="services.aspx">consumer insight
-                            </a>
-                        </li>
+                            <%} %>
+                        
                     </ul>
                     <li>
                         <a href="AboutUs.aspx">ABOUT US
@@ -91,30 +83,30 @@
         <footer class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="footer-left col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div>
-                    <img src="assets/images/logo3.png" alt="">
+                    <img src="<%= MasterModels.SitePics.FooterLogo_Path %>" alt="">
                 </div>
                 <div>
-                    <span>Fardidmedia@gmail.com</span>
+                    <span><%= MasterModels.SiteTexts.Email %></span>
                 </div>
                 <div>
                     <ul>
                         <li>
-                            <a href="#" target="_blank">
+                            <a href="<%= MasterModels.SiteTexts.Instagram %>" target="_blank">
                                 <img src="assets/images/instagram.png" alt="Instagram">
                             </a>
                         </li>
                         <li>
-                            <a href="#" target="_blank">
+                            <a href="<%= MasterModels.SiteTexts.FaceBook %>" target="_blank">
                                 <img src="assets/images/facebook.png" alt="Facebook">
                             </a>
                         </li>
                         <li>
-                            <a href="#" target="_blank">
+                            <a href="<%= MasterModels.SiteTexts.Twitter %>" target="_blank">
                                 <img src="assets/images/twitter.png" alt="Twitter">
                             </a>
                         </li>
                         <li>
-                            <a href="#" target="_blank">
+                            <a href="<%= MasterModels.SiteTexts.Linkedin %>" target="_blank">
                                 <img src="assets/images/linkedin.png" alt="Linkedin">
                             </a>
                         </li>
@@ -123,22 +115,21 @@
             </div>
             <div class="footer-right">
                 <span style="margin-bottom: 5px;">
-                    <span style="font-size: 11.2px">تهران، میرداماد، میدان مادر، خیابان شهید سنجابی (بهروز سابق)
+                    <span style="font-size: 11.2px"><%= MasterModels.SiteTexts.Per_Address %>
                     </span>
                     <br>
-                    <span style="direction: rtl">کوچه شریفی، پلاک 6، افق ارتباطات فردید
+                    <span style="direction: rtl">
                 |
-                تلفن: 02122225896
+                تلفن: <%= MasterModels.SiteTexts.PhoneNumber %>
                     </span>
                     <br>
                 </span>
                 <span style="margin-bottom: 5px;">
-                    <span style="font-size: 10.45px">N 6, Sharifi Alley, Sanjabi Ave, Madar Sq, Mirdamad Blvd
-                    </span>
+                    <span style="font-size: 10.45px"><%= MasterModels.SiteTexts.Eng_Address %></span>
                     <br>
                     <span class="display-inline-block not-full-width text-right-xs" style="float: left; width: 50%; border-right: 1px solid white; text-align: left">Tehran, Iran
                     </span>
-                    <span class="display-inline-block not-full-width text-left-xs" style="float: right; width: 50%;">+98 22 22 58 960
+                    <span class="display-inline-block not-full-width text-left-xs" style="float: right; width: 50%;"><%= MasterModels.SiteTexts.PhoneNumber %>
                     </span>
                     <br>
                 </span>
