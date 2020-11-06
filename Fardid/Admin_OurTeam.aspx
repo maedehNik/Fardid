@@ -216,15 +216,8 @@
             Name_ = $("#team-add-name").val();
             Subjecy__ = $("#team-add-title").val();
 
-            const PostJson = {
-                'picId': picId,
-                'Name': Name_,
-                'Subject': Subjecy__
-            };
-
-
             $.ajax({
-                url: '/Admin_Ajax/AddTeamMember.aspx',
+                url: '/Admin_Ajax/AddTeamMember.aspx?picId=' + picId + '&Name=' + Name_ + '&Subject' + Subjecy__,
                 type: "post",
                 
                 contentType: "application/json; charset=utf-8",

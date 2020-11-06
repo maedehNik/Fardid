@@ -7,7 +7,7 @@ using System.Data;
 
 namespace Logics_Layer.Admin
 {
-    class Profile_Logic : PDBC
+    public class Profile_Logic : PDBC
     {
         public AdminModel Get_Profile()
         {

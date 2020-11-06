@@ -60,10 +60,11 @@ namespace Logics_Layer.Admin
             };
             parss.Add(par);
 
-            DataTable dt = base.Select("SELECT [Name] FROM [tbl_Message] WHERE M_Id= @M_Id");
+            DataTable dt = base.Select("SELECT [EmailAddress] FROM [tbl_Message] WHERE M_Id= @M_Id");
             if (dt.Rows.Count != 0)
             {
                 s += base.Script("UPDATE [tbl_Message] SET [Answered] =1 ,[AnswerMessage] = @Answer WHERE M_Id=@M_Id",parss);
+
             }
             base.DC();
             if(s=="1")

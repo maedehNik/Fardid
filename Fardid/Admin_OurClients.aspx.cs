@@ -18,7 +18,6 @@ namespace Fardid
             logic = new OurClients_Logic();
             Models = logic.GetClients();
 
-
         }
     }
 }

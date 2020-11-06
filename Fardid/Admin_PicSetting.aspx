@@ -247,7 +247,8 @@
                                                             <label class="form-control-label col-12">لوگو اصلی</label>
                                                             <div class="m-section__content tshtextright col-12">
                                                                 <button class="btn btn-brand btn-sm" type="button" data-target="#uploader" data-toggle="modal" style="margin-bottom: 30px;">انتخاب عکس</button>
-                                                                <input hidden id="MainLogoId" value="<%= Models.MainLogo_Id %>"/>
+                                                                <%--<input hidden id="MainLogoId" value="<%= Models.MainLogo_Id %>"/>--%>
+                                                                <asp:HiddenField ID="HiddenFieldMainLogoId" runat="server" Value="<%= Models.MainLogo_Id %>"/>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
@@ -266,7 +267,8 @@
                                                             <label class="form-control-label col-12">فو آیکن</label>
                                                             <div class="m-section__content tshtextright col-12">
                                                                 <button class="btn btn-brand btn-sm" type="button" data-target="#uploader" data-toggle="modal" style="margin-bottom: 30px;">انتخاب عکس</button>
-                                                                <input hidden id="FoIconId" value="<%= Models.FoIcon_Id %>"/>
+                                                         <%--       <input hidden id="FoIconId" value="<%= Models.FoIcon_Id %>"/>--%>
+                                                                <asp:HiddenField ID="HiddenField_FoIconId" runat="server" Value="<%= Models.FoIcon_Id %>" />
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
@@ -287,7 +289,8 @@
                                                             <label class="form-control-label col-12">لوگو فوتر</label>
                                                             <div class="m-section__content tshtextright col-12">
                                                                 <button class="btn btn-brand btn-sm" type="button" data-target="#uploader" data-toggle="modal" style="margin-bottom: 30px;">انتخاب عکس</button>
-                                                                <input hidden id="FooterLogoId" value="<%= Models.FooterLogo_Id %>"/>
+                                                                <%--<input hidden id="FooterLogoId" value="<%= Models.FooterLogo_Id %>"/>--%>
+                                                                <asp:HiddenField ID="HiddenField_FooterLogoId" runat="server" Value="<%= Models.FooterLogo_Id %>"/>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
@@ -306,7 +309,8 @@
                                                             <label class="form-control-label col-12">لوگو ویدیو ها</label>
                                                             <div class="m-section__content tshtextright col-12">
                                                                 <button class="btn btn-brand btn-sm" type="button" data-target="#uploader" data-toggle="modal" style="margin-bottom: 30px;">انتخاب عکس</button>
-                                                                <input hidden id="VideoLogoId" value="<%= Models.VideoLogo_Id %>"/>
+                                                                <%--<input hidden id="VideoLogoId" value="<%= Models.VideoLogo_Id %>"/>--%>
+                                                                <asp:HiddenField ID="HiddenField_VideoLogoId" runat="server" Value="<%= Models.VideoLogo_Id %>"/>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
@@ -327,7 +331,8 @@
                                                             <label class="form-control-label col-12">لوگو منو</label>
                                                             <div class="m-section__content tshtextright col-12">
                                                                 <button class="btn btn-brand btn-sm" type="button" data-target="#uploader" data-toggle="modal" style="margin-bottom: 30px;">انتخاب عکس</button>
-                                                                <input hidden id="MenuLogoId" value="<%= Models.MenuLogo_Id %>"/>
+                                                                <%--<input hidden id="MenuLogoId" value="<%= Models.MenuLogo_Id %>"/>--%>
+                                                                <asp:HiddenField ID="HiddenField_MenuLogoId" runat="server" Value="<%= Models.MenuLogo_Id %>"/>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
@@ -346,7 +351,8 @@
                                             <div class="m-form__actions">
                                                 <div class="row">
                                                     <div class="col-lg-12 tshtextleft" style="padding-left: 0;">
-                                                        <button type="submit" class="btn btn-accent m-btn m-btn--air m-btn--custom sendblg">ذخیره</button>
+                                                       <%-- <button type="submit" class="btn btn-accent m-btn m-btn--air m-btn--custom sendblg">ذخیره</button>--%>
+                                                        <asp:Button ID="Button1" runat="server" Text="ذخیره" CssClass="btn btn-accent m-btn m-btn--air m-btn--custom sendblg" OnClick="Button1_Click"/>
                                                     </div>
                                                 </div>
                                             </div>

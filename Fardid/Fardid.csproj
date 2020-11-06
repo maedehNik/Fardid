@@ -2123,6 +2123,7 @@
     <Content Include="Admin_Ajax\ActiveService.aspx" />
     <Content Include="Admin_Ajax\Active_NewsLetter.aspx" />
     <Content Include="Admin_Ajax\AddTeamMember.aspx" />
+    <Content Include="Admin_Ajax\AnswerMessage.aspx" />
     <Content Include="Admin_Ajax\DeActiveService.aspx" />
     <Content Include="Admin_Ajax\DeActive_NewsLetter.aspx" />
     <Content Include="Admin_Ajax\DeletePortfolio.aspx" />
@@ -2132,6 +2133,7 @@
     <Content Include="Admin_Ajax\SaveClientsPic.aspx" />
     <Content Include="Admin_Ajax\SaveNewsLetter.aspx" />
     <Content Include="Admin_Ajax\SaveSliderPics.aspx" />
+    <Content Include="Admin_Ajax\SeenMessage.aspx" />
     <Content Include="Admin_Ajax\SendGroupEmail.aspx" />
     <Content Include="Admin_Ajax\SendMail.aspx" />
     <Content Include="Admin_Ajax\UpdateTeamMember.aspx" />
@@ -2262,6 +2264,13 @@
     <Compile Include="Admin_Ajax\AddTeamMember.aspx.designer.cs">
       <DependentUpon>AddTeamMember.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin_Ajax\AnswerMessage.aspx.cs">
+      <DependentUpon>AnswerMessage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Ajax\AnswerMessage.aspx.designer.cs">
+      <DependentUpon>AnswerMessage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin_Ajax\DeActiveService.aspx.cs">
       <DependentUpon>DeActiveService.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2324,6 +2333,13 @@
     </Compile>
     <Compile Include="Admin_Ajax\SaveSliderPics.aspx.designer.cs">
       <DependentUpon>SaveSliderPics.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Ajax\SeenMessage.aspx.cs">
+      <DependentUpon>SeenMessage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Ajax\SeenMessage.aspx.designer.cs">
+      <DependentUpon>SeenMessage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin_Ajax\SendGroupEmail.aspx.cs">
       <DependentUpon>SendGroupEmail.aspx</DependentUpon>

@@ -24,7 +24,7 @@ namespace Logics_Layer.Customer
             ///////////
             List<KeyValueModel> ServiceModels = new List<KeyValueModel>();
             base.Connect();
-            DataTable dt = base.Select("SELECT[S_Id],[Subject] FROM [tbl_Services] WHERE [Deleted]=0 AND [Show_Menu]=1 AND [Active]=1");
+            DataTable dt = base.Select("SELECT top 4  [S_Id],[Subject] FROM [tbl_Services] WHERE [Deleted]=0 AND [Show_Menu]=1 AND [Active]=1");
             base.DC();
 
             for (int i = 0; i < dt.Rows.Count; i++)

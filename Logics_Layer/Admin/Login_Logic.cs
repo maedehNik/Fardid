@@ -60,7 +60,7 @@ namespace Logics_Layer.Admin
                     DataTable dt2 = base.Select("SELECT[PicId],[PicAddress],[PicThumbnailAddress] FROM [tbl_PicUploader] where PicId=@PicId", parss);
                     if(dt2.Rows.Count!=0)
                     {
-                        model.ProfilePic_Path = dt.Rows[0]["PicAddress"].ToString();
+                        model.ProfilePic_Path = dt2.Rows[0]["PicAddress"].ToString();
                     }else
                     {
                         model.ProfilePic_Path = ProfilePic;

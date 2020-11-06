@@ -17,31 +17,32 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label for="view-message-modal-name" class="form-control-label">نام و نام خانوادگی</label>
-                            <%--<input type="text" class="form-control" id="view-message-modal-name" disabled="disabled">--%>
-                            <asp:TextBox ID="TextBoxModalName" runat="server" CssClass="form-control" Disabled="disabled"></asp:TextBox>
+                            <input type="text" class="form-control" id="view-message-modal-name" disabled="disabled">
+                            <%--<asp:TextBox ID="TextBoxModalName" runat="server" CssClass="form-control" Disabled="disabled"></asp:TextBox>--%>
                         </div>
+                        <div style="display:none" id="MesId"></div>
                         <div class="form-group col-md-6">
                             <label for="view-message-modal-subject" class="form-control-label">موضوع</label>
-                            <%--<input type="text" class="form-control" id="view-message-modal-subject" disabled="disabled">--%>
-                            <asp:TextBox ID="TextBoxModelSub" runat="server" CssClass="form-control" Disabled="disabled"></asp:TextBox>
+                            <input type="text" class="form-control" id="view-message-modal-subject" disabled="disabled">
+. 
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="view-message-modal-email" class="form-control-label">ایمیل</label>
-                        <%--<input type="text" class="form-control" id="view-message-modal-email" disabled="disabled">--%>
-                        <asp:TextBox ID="TextBoxModalMail" runat="server" CssClass="form-control" Disabled="disabled"></asp:TextBox>
+                        <input type="text" class="form-control" id="view-message-modal-email" disabled="disabled">
+                        <%--<asp:TextBox ID="TextBoxModalMail" runat="server" CssClass="form-control" Disabled="disabled"></asp:TextBox>--%>
                     </div>
                     <div class="form-group">
                         <label for="view-message-modal-message" class="form-control-label">پیام</label>
-                        <%--<textarea class="form-control textarea-padding resize-none" id="view-message-modal-message" disabled="disabled" style="height: 150px;"></textarea>--%>
-                        <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control textarea-padding resize-none" Disabled="disabled" Height="150 px" TextMode="MultiLine"></asp:TextBox>
+                        <textarea class="form-control textarea-padding resize-none" id="view-message-modal-message" disabled="disabled" style="height: 150px;"></textarea>
+<%--                        <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control textarea-padding resize-none" Disabled="disabled" Height="150 px" TextMode="MultiLine"></asp:TextBox>--%>
                     </div>
                 </div>
                 <div class="modal-footer">
-                  <%--  <button type="button" class="btn btn-secondary" data-dismiss="modal">بستن</button>--%>
-                    <asp:Button ID="Button1" runat="server" Text="بستن" data-dismiss="modal" CssClass="btn btn-secondary" OnClick="Button1_Click"/>
-                    <%--<button type="button" class="btn btn-primary send-message-btn-view-modal" data-dismiss="modal" data-toggle="modal" data-target="#send-message">پاسخ</button>--%>
-                    <asp:Button ID="Button2" runat="server" Text="پاسخ" CssClass="btn btn-primary send-message-btn-view-modal" data-dismiss="modal" data-toggle="modal" data-target="#send-message" OnClick="Button2_Click"/>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">بستن</button>
+                  <%--  <asp:Button ID="Button1" runat="server" Text="بستن" data-dismiss="modal" CssClass="btn btn-secondary" OnClick="Button1_Click"/>--%>
+                    <button id="AnswerM" type="button" class="btn btn-primary send-message-btn-view-modal" data-dismiss="modal" data-toggle="modal" data-target="#send-message" onclick="return AnswerModal()">پاسخ</button>
+                    <%--<asp:Button ID="Button2" runat="server" Text="پاسخ" CssClass="btn btn-primary send-message-btn-view-modal" data-dismiss="modal" data-toggle="modal" data-target="#send-message" OnClick="Button2_Click"/>--%>
                 </div>
             </div>
         </div>
@@ -69,12 +70,12 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="send-message-modal-message" class="form-control-label">پیام های ارسالی قبل</label>
-                            <p class="rep-messages">
+                            <label for="send-message-modal-message" class="form-control-label">پیام</label>
+                            <%--<p class="rep-messages">
                                 پیام پیام
-                            </p>
-                            <p class="rep-messages">
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                            </p>--%>
+                            <p class="rep-messages" id="send-message-modal-text">
+                              
                             </p>
                         </div>
                         <div class="form-group">
@@ -84,7 +85,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="modal" data-target="#view-message">بازگشت</button>
-                        <button type="submit" class="btn btn-primary">ارسال</button>
+                        <button type="submit" class="btn btn-primary" onclick="return SendAnswer()">ارسال</button>
                     </div>
                 </form>
             </div>
@@ -156,9 +157,12 @@
                                                         {%>
                                                     <tr>
                                                                 <th scope="row"><% = item.Num %></th>
-                                                                <td><% = item.Name%></td>
-                                                                <td><% = item.Subject %></td>
+                                                                <td id="Name-<%=item.M_Id %>"><% = item.Name%></td>
+                                                                <td id="Sub-<%=item.M_Id %>"><% = item.Subject %></td>
                                                                 <td><%= item.Date %></td>
+                                                        <td style="display:none" id="Messge-<%=item.M_Id %>"><%=item.Message %></td>
+                                                        <td style="display:none" id="Answered-<%=item.M_Id %>"><%=item.Answered %></td>
+                                                         <td style="display:none" id="Email-<%=item.M_Id %>"><%=item.Email %></td>
                                                                 <td>
                                                                     <%
                                                                         if (item.Seen == 1)
@@ -180,7 +184,9 @@
                                                                 <td>
                                                                    <%-- <button runat="server" Id="Btn_<%= item.M_Id %>" onserverclick="Unnamed_ServerClick" class="btn btn-brand tshpcustom view-message-btn" data-toggle="modal" data-target="#view-message" CommandArgument="<%= item.M_Id %>" CommandName="<%= item.Num %>"><i class="fa fa-eye tshfa"></i>نمایش</button>--%>
 
-                                                                    <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-brand tshpcustom view-message-btn"  OnClick="Unnamed_ServerClick"><i class="fa fa-eye tshfa"></i>نمایش</asp:LinkButton>
+<%--                                                                    <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-brand tshpcustom view-message-btn"  OnClick="Unnamed_ServerClick"><i class="fa fa-eye tshfa"></i>نمایش</asp:LinkButton>--%>
+
+                                                                    <button class="btn btn-brand tshpcustom view-message-btn" data-toggle="modal" data-target="#view-message" data-name="" data-subject="" data-email="" data-message="" onclick="return ShowModal(<%=item.M_Id %>)"><i class="fa fa-eye tshfa"></i>نمایش</button>
 
                                                                 </td>
                                                             </tr>
@@ -408,5 +414,103 @@
         var ActionsDemo = { init: function () { $(".summernote").summernote({ height: 350 }) } }; jQuery(document).ready(function () { ActionsDemo.init() });
     </script>
 
+    <script>
 
+        function ShowModal(Id) {
+
+            mail = $('#Email-' + Id).text();
+            name_ = $('#Name-' + Id).text();
+            Sub = $('#Sub-' + Id).text();
+            Message = $('#Messge-' + Id).text();
+            if ($('#Answered-' + Id).text() == 1) {
+                $('#AnswerM').prop('disable', true);
+            } else {
+                $('#AnswerM').prop('disable', false);
+            }
+
+            $('#view-message-modal-email').val(mail);
+            $('#view-message-modal-name').val(name_);
+            $('#view-message-modal-subject').val(Sub);
+            $('#view-message-modal-message').val(Message);
+            $('#MesId').text(Id);
+
+            $.ajax({
+                url: 'Admin_Ajax/SeenMessage.aspx?Id=' + Id,
+                type: "post",
+                contentType: "application/json; charset=utf-8",
+                success: function (response) {
+                   
+
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    alert("مشکل در برقراری ارتباط با سرور");
+                }
+            });
+
+            return false;
+        }
+
+        function AnswerModal() {
+            Id = $('#MesId').text();
+            Ans=$('#')
+            $.ajax({
+                url: 'Admin_Ajax/AnswerMessage.aspx?Id=' + Id +'&Answer='+,
+                type: "post",
+                contentType: "application/json; charset=utf-8",
+                success: function (response) {
+
+
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    alert("مشکل در برقراری ارتباط با سرور");
+                }
+            });
+        }
+
+        function SendAnswer() {
+            Id = $('#MesId').text();
+            mail = $('#Email-' + Id).text();
+            name_ = $('#Name-' + Id).text();
+            Sub = $('#Sub-' + Id).text();
+            Message = $('#Messge-' + Id).text();
+
+            $('#send-message-modal-email').val(mail);
+            $('#send-message-modal-name').val(name_);
+            $('#send-message-modal-text').text(Message);
+            
+            Ans = $('#send-message-modal-message').val();
+
+
+            $.ajax({
+                url: 'Admin_Ajax/AnswerMessage.aspx?Id=' + Id + '&Answer=' +,
+                type: "post",
+                contentType: "application/json; charset=utf-8",
+                success: function (response) {
+                    if (response == "Success") {
+                        $.ajax({
+                            url: 'Admin_Ajax/SendMail.aspx?Mail=' + mail + '&Subject=' + sub + '&Body=' + Ans,
+                            type: "post",
+                            contentType: "application/json; charset=utf-8",
+                            success: function (response) {
+                                if (response == "Message sent") {
+                                    $('#send-message-modal-message').val("")
+                                    alert("پاسخ با موفقیت ارسال شد.")
+
+                                }
+
+                            },
+                            error: function (jqXHR, textStatus, errorThrown) {
+                                alert("مشکل در برقراری ارتباط با سرور");
+                            }
+                        });
+                    }
+
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    alert("مشکل در برقراری ارتباط با سرور");
+                }
+            });
+            return false;
+        }
+    </script>
 </asp:Content>
